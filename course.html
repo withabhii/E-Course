@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logic Minds - Premium Online Learning Platform</title>
-     <meta name="description" content="Leading IT company offering end-to-end solutions including web & app development, custom software projects, and industry-focused IT courses. 
+    <meta name="description" content="Leading IT company offering end-to-end solutions including web & app development, custom software projects, and industry-focused IT courses. 
         Empowering businesses and learners with cutting-edge technology and training.">
     <link rel="icon" type="image/x-icon" href="image\logo.png">
     <!-- Bootstrap CSS -->
@@ -18,823 +18,823 @@
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
-    :root {
-        /* Blue Palette */
-        --primary-blue: #3b82f6;
-        /* blue-500 */
-        --secondary-blue: #2563eb;
-        /* blue-600 */
-        --light-blue: #93c5fd;
-        /* blue-300 */
-        --sky-blue: #e0f2fe;
-        /* sky-100 */
-        --navy-blue: #1e293b;
-        /* slate-800 */
-
-        --primary-blue: #1a56db;
-        --dark-blue: #133b9a;
-        --light-blue: #3b82f6;
-        --sky-blue: #93c5fd;
-        --navy-blue: #0f172a;
-        --off-white: #f8fafc;
-        --accent-blue: #2563eb;
-        --teal-blue: #0d9488;
-        --gradient-start: #1e3a8a;
-        --gradient-end: rgb(122, 153, 255);
-        /* Supporting Colors */
-        --off-white: #f8fafc;
-        /* slate-50 */
-        --light-gray: #f1f5f9;
-        /* slate-100 */
-        --medium-gray: #64748b;
-        /* slate-500 */
-        --dark-text: #334155;
-        /* slate-700 */
-        --light-text: #e2e8f0;
-        /* slate-200 */
-        --white: #ffffff;
-        --success: #22c55e;
-        /* green-500 */
-        --info: #0ea5e9;
-        /* sky-500 */
-        --warning: #f59e0b;
-        /* amber-500 */
-        --danger: #ef4444;
-        /* red-500 */
-    }
-
-
-    body {
-        font-family: 'Poppins', sans-serif;
-        color: #334155;
-        overflow-x: hidden;
-        background-color: var(--off-white);
-    }
-
-    /* Navigation */
-    .navbar {
-        background: linear-gradient(135deg, var(--gradient-end) 50%, var(--gradient-start) 50%);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-        padding: 18px 0;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .navbar.scrolled {
-        padding: 12px 0;
-        background-color: rgba(15, 23, 42, 0.98) !important;
-        backdrop-filter: blur(12px);
-    }
-
-    .navbar-brand {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .navbar-brand img.logo-img {
-        height: 60px;
-        width: 70px;
-        transition: all 0.3s;
-    }
-
-    .navbar-brand img.logo-text {
-        height: 24px;
-        transition: all 0.3s;
-        margin-left: -15px;
-    }
-
-    .navbar.scrolled .navbar-brand img.logo-img {
-        height: 45px;
-    }
-
-    .navbar.scrolled .navbar-brand img.logo-text {
-        height: 24px;
-    }
-
-    .nav-link {
-        font-weight: 500;
-        color: #e2e8f0 !important;
-        margin: 0 10px;
-        transition: all 0.3s;
-        position: relative;
-        padding: 8px 12px !important;
-    }
-
-    .nav-link:hover {
-        color: var(--sky-blue) !important;
-    }
-
-    .nav-link::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 3px;
-        background: linear-gradient(90deg, var(--sky-blue), var(--teal-blue));
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        transition: width 0.3s, opacity 0.3s;
-        opacity: 0;
-        border-radius: 3px;
-    }
-
-    .nav-link:hover::after {
-        width: 70%;
-        opacity: 1;
-    }
-
-    .nav-link.active {
-        color: var(--sky-blue) !important;
-        font-weight: 600;
-    }
-
-    .nav-link.active::after {
-        width: 70%;
-        opacity: 1;
-    }
-
-
-    /* Hero Section */
-    .hero-section {
-        background-image: linear-gradient(rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.7)), url('image/course.png');
-        background-size: cover;
-        background-position: center;
-        color: var(--white);
-        padding: 100px 0;
-        text-align: center;
-        margin-top: 100px;
-    }
-
-    .hero-section h1 {
-        font-size: 3.5rem;
-        font-weight: 700;
-        margin-bottom: 20px;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-    }
-
-    .hero-section p {
-        font-size: 1.2rem;
-        max-width: 700px;
-        margin: 0 auto 30px;
-        color: var(--light-text);
-    }
-
-    .hero-section .btn-primary {
-        background-color: var(--primary-blue);
-        border-color: var(--primary-blue);
-        transition: all 0.3s ease;
-    }
-
-    .hero-section .btn-primary:hover {
-        background-color: var(--secondary-blue);
-        border-color: var(--secondary-blue);
-        transform: translateY(-2px);
-    }
-
-    .hero-section .btn-outline-light {
-        color: var(--white);
-        border-color: var(--white);
-        transition: all 0.3s ease;
-    }
-
-    .hero-section .btn-outline-light:hover {
-        background-color: rgb(255, 255, 255);
-        color: black;
-        transform: translateY(-2px);
-    }
-
-    /* Section Title */
-    .section-title {
-        text-align: center;
-        margin: 60px 0 40px;
-        position: relative;
-    }
-
-    .section-title h2 {
-        font-weight: 700;
-        color: var(--navy-blue);
-        /* Darker title */
-        display: inline-block;
-        padding-bottom: 10px;
-        margin-bottom: 0;
-    }
-
-    .section-title h2::after {
-        content: '';
-        position: absolute;
-        width: 80px;
-        height: 3px;
-        background-color: var(--primary-blue);
-        /* Accent color */
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 2px;
-    }
-
-    /* Course Card */
-    .course-card {
-        background: var(--white);
-        border-radius: 12px;
-        /* Slightly more rounded */
-        overflow: hidden;
-        box-shadow: 0 5px 20px rgba(30, 41, 59, 0.08);
-        /* Subtle shadow */
-        transition: all 0.3s ease;
-        margin-bottom: 30px;
-        border: 1px solid var(--light-gray);
-        /* Light border */
-    }
-
-    .course-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 30px rgba(30, 41, 59, 0.12);
-    }
-
-    .course-img {
-        height: 180px;
-        overflow: hidden;
-    }
-
-    .course-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-    }
-
-    .course-card:hover .course-img img {
-        transform: scale(1.05);
-    }
-
-    .course-body {
-        padding: 25px;
-        /* More padding */
-    }
-
-    .course-title {
-        font-weight: 600;
-        color: var(--navy-blue);
-        margin-bottom: 10px;
-        font-size: 1.15rem;
-    }
-
-    .course-desc {
-        color: var(--medium-gray);
-        font-size: 0.9rem;
-        margin-bottom: 15px;
-        min-height: 55px;
-        /* Ensure consistent height */
-    }
-
-    .course-meta {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 15px;
-        border-top: 1px solid var(--light-gray);
-        padding-top: 15px;
-    }
-
-    .course-price {
-        font-weight: 700;
-        color: var(--primary-blue);
-        /* Use primary blue */
-        font-size: 1.2rem;
-    }
-
-    .course-duration {
-        color: var(--medium-gray);
-        font-size: 0.9rem;
-        display: flex;
-        align-items: center;
-    }
-
-    .course-duration i {
-        margin-right: 5px;
-        color: var(--primary-blue);
-        /* Icon color */
-    }
-
-    .btn-enroll {
-        background-color: var(--primary-blue);
-        color: var(--white);
-        border: none;
-        padding: 10px 20px;
-        /* Larger padding */
-        border-radius: 6px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        width: 100%;
-        margin-top: 20px;
-        /* Space above button */
-        text-transform: uppercase;
-        font-size: 0.9rem;
-        letter-spacing: 0.5px;
-    }
-
-    .btn-enroll:hover {
-        background-color: var(--secondary-blue);
-        color: var(--white);
-        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-        transform: translateY(-2px);
-    }
-
-    .badge {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        z-index: 2;
-        padding: 6px 12px;
-        font-weight: 600;
-        font-size: 0.75rem;
-        border-radius: 4px;
-        text-transform: uppercase;
-    }
-
-    /* Badge colors */
-    .badge.bg-success {
-        background-color: var(--success) !important;
-    }
-
-    .badge.bg-info {
-        background-color: var(--info) !important;
-        color: var(--white) !important;
-    }
-
-    .badge.bg-warning {
-        background-color: var(--warning) !important;
-        color: var(--navy-blue) !important;
-    }
-
-    .badge.bg-danger {
-        background-color: var(--danger) !important;
-    }
-
-    /* Popular Courses Section */
-    #popular {
-        background-color: var(--sky-blue);
-        /* Very light blue background */
-    }
-
-    #popular .card {
-        border-radius: 10px;
-        transition: all 0.3s ease;
-    }
-
-    #popular .card:hover {
-        box-shadow: 0 8px 25px rgba(30, 41, 59, 0.1);
-        transform: translateY(-5px);
-    }
-
-    #popular .card-title {
-        color: var(--navy-blue);
-    }
-
-    #popular .card-text {
-        color: var(--medium-gray);
-        font-size: 0.9rem;
-    }
-
-    #popular .text-primary {
-        color: var(--primary-blue) !important;
-    }
-
-    #popular .btn-outline-primary {
-        color: var(--primary-blue);
-        border-color: var(--primary-blue);
-        transition: all 0.3s ease;
-    }
-
-    #popular .btn-outline-primary:hover {
-        background-color: var(--primary-blue);
-        color: var(--white);
-    }
-
-    #popular .card-footer small {
-        color: var(--medium-gray);
-    }
-
-    #popular .card-footer i {
-        color: var(--primary-blue);
-        margin-right: 4px;
-    }
-
-    #popular .position-absolute {
-        top: 10px !important;
-        /* Adjusted from top-10 */
-        left: 10px !important;
-        /* Adjusted from start-10 */
-    }
-
-
-    /* Why Choose Us Section */
-    .why-choose-us-icon-bg {
-        background-color: rgba(59, 130, 246, 0.1);
-        /* primary-blue with opacity */
-        color: var(--primary-blue);
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        /* Prevent shrinking */
-    }
-
-    .why-choose-us h5 {
-        color: var(--navy-blue);
-        font-weight: 600;
-    }
-
-    .why-choose-us p {
-        color: var(--medium-gray);
-    }
-
-
-    /* Testimonials Section */
-    #testimonials {
-        background-color: var(--sky-blue);
-        /* Match popular courses background */
-    }
-
-    #testimonials .card {
-        border-radius: 10px;
-    }
-
-    #testimonials .card-text {
-        color: var(--medium-gray);
-        font-style: italic;
-        margin-bottom: 25px !important;
-    }
-
-    #testimonials h6 {
-        color: var(--navy-blue);
-    }
-
-    #testimonials small {
-        color: var(--medium-gray);
-    }
-
-    #testimonials .text-warning i {
-        color: var(--warning);
-        /* Keep stars yellow/gold */
-    }
-
-    /* Footer */
-    .footer {
-        background-color: var(--navy-blue);
-        color: white;
-        padding: 100px 0 30px;
-        position: relative;
-    }
-
-    .footer::before {
-        content: '';
-        /* position: absolute; */
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 150px;
-        background: linear-gradient(to bottom, rgba(15, 23, 42, 0), var(--navy-blue));
-    }
-
-    .footer-logo {
-        height: 70px;
-        margin-bottom: 25px;
-    }
-
-    .footer-about p {
-        color: #cbd5e1;
-        line-height: 1.8;
-        margin-bottom: 25px;
-    }
-
-    .footer-links h5 {
-        font-weight: 700;
-        margin-bottom: 25px;
-        position: relative;
-        padding-bottom: 12px;
-        font-size: 1.3rem;
-    }
-
-    .footer-links h5::after {
-        content: '';
-        position: absolute;
-        width: 50px;
-        height: 3px;
-        background: linear-gradient(90deg, var(--primary-blue), var(--teal-blue));
-        bottom: 0;
-        left: 0;
-        border-radius: 3px;
-    }
-
-    .footer-links ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .footer-links li {
-        margin-bottom: 12px;
-        transition: all 0.3s;
-    }
-
-    .footer-links li:hover {
-        transform: translateX(5px);
-    }
-
-    .footer-links a {
-        color: #cbd5e1;
-        text-decoration: none;
-        transition: all 0.3s;
-        display: flex;
-        align-items: center;
-    }
-
-    .footer-links a:hover {
-        color: var(--sky-blue);
-    }
-
-    .footer-links a i {
-        margin-right: 10px;
-        color: var(--sky-blue);
-        font-size: 0.8rem;
-    }
-
-    .social-icons {
-        margin-top: 25px;
-    }
-
-    .social-icons a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 42px;
-        height: 42px;
-        background-color: rgba(255, 255, 255, 0.1);
-        color: white;
-        border-radius: 50%;
-        text-align: center;
-        line-height: 42px;
-        margin-right: 12px;
-        transition: all 0.3s;
-    }
-
-    .social-icons a:hover {
-        background: linear-gradient(135deg, var(--primary-blue), var(--teal-blue));
-        transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
-    }
-
-    .newsletter-form .form-control {
-        background-color: rgba(255, 255, 255, 0.1);
-        border: none;
-        color: white;
-        height: 50px;
-        border-radius: 8px;
-        padding: 10px 15px;
-        margin-bottom: 15px;
-    }
-
-    .newsletter-form .form-control::placeholder {
-        color: #cbd5e1;
-        opacity: 0.8;
-    }
-
-    .newsletter-form .btn {
-        background: linear-gradient(90deg, var(--primary-blue), var(--teal-blue));
-        color: white;
-        border: none;
-        height: 50px;
-        border-radius: 8px;
-        font-weight: 600;
-        width: 100%;
-        transition: all 0.3s;
-    }
-
-    .newsletter-form .btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
-    }
-
-    .copyright {
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding-top: 25px;
-        margin-top: 50px;
-        text-align: center;
-        color: #94a3b8;
-        font-size: 0.95rem;
-    }
-
-    .copyright a {
-        color: var(--accent-blue);
-        text-decoration: none;
-        transition: all 0.3s;
-    }
-
-    .copyright a:hover {
-        color: white;
-    }
-
-    /* Animations */
-    .animate-up {
-        animation: fadeInUp 1s both;
-    }
-
-    .animate-delay-1 {
-        animation-delay: 0.2s;
-    }
-
-    .animate-delay-2 {
-        animation-delay: 0.4s;
-    }
-
-    .animate-delay-3 {
-        animation-delay: 0.6s;
-    }
-
-    /* Floating Elements */
-    .floating-element {
-        position: absolute;
-        border-radius: 50%;
-        opacity: 0.1;
-        z-index: 0;
-    }
-
-
-    /* Modal Styles */
-    .modal-content {
-        border-radius: 10px;
-        border: none;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .modal-header {
-        border-bottom: 1px solid var(--light-gray);
-        padding: 1.5rem;
-        /* More padding */
-    }
-
-    .modal-title {
-        font-weight: 600;
-        color: var(--navy-blue);
-        /* Dark title */
-    }
-
-    .modal-body {
-        padding: 1.5rem;
-    }
-
-    .modal-footer {
-        border-top: 1px solid var(--light-gray);
-        padding: 1rem 1.5rem;
-        background-color: var(--off-white);
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-    }
-
-    .course-details-img {
-        height: 250px;
-        /* Larger image */
-        object-fit: cover;
-        border-radius: 8px;
-        margin-bottom: 25px;
-        width: 100%;
-    }
-
-    .course-features {
-        list-style: none;
-        padding-left: 0;
-    }
-
-    .course-features li {
-        margin-bottom: 12px;
-        display: flex;
-        align-items: flex-start;
-        /* Align icon top */
-        color: var(--dark-text);
-        font-size: 0.95rem;
-    }
-
-    .course-features i {
-        color: var(--primary-blue);
-        /* Blue check icon */
-        margin-right: 12px;
-        width: 20px;
-        padding-top: 3px;
-        /* Align icon better with text */
-        flex-shrink: 0;
-    }
-
-    .modal .bg-light {
-        background-color: var(--sky-blue) !important;
-        /* Light blue bg */
-        padding: 20px !important;
-    }
-
-    .modal h6 {
-        color: var(--navy-blue);
-        font-weight: 600;
-        margin-bottom: 10px;
-    }
-
-    .modal .text-primary {
-        color: var(--primary-blue) !important;
-    }
-
-    .modal .btn-primary {
-        background-color: var(--primary-blue);
-        border-color: var(--primary-blue);
-        transition: all 0.3s ease;
-    }
-
-    .modal .btn-primary:hover {
-        background-color: var(--secondary-blue);
-        border-color: var(--secondary-blue);
-        transform: translateY(-2px);
-    }
-
-
-    /* Responsive Adjustments */
-    @media (max-width: 991px) {
-        .navbar-nav {
-            margin-top: 15px;
-            /* background-color: var(--navy-blue); */
-            border-radius: 8px;
-            padding: 10px 0;
+        :root {
+            /* Blue Palette */
+            --primary-blue: #3b82f6;
+            /* blue-500 */
+            --secondary-blue: #2563eb;
+            /* blue-600 */
+            --light-blue: #93c5fd;
+            /* blue-300 */
+            --sky-blue: #e0f2fe;
+            /* sky-100 */
+            --navy-blue: #1e293b;
+            /* slate-800 */
+
+            --primary-blue: #1a56db;
+            --dark-blue: #133b9a;
+            --light-blue: #3b82f6;
+            --sky-blue: #93c5fd;
+            --navy-blue: #0f172a;
+            --off-white: #f8fafc;
+            --accent-blue: #2563eb;
+            --teal-blue: #0d9488;
+            --gradient-start: #1e3a8a;
+            --gradient-end: rgb(122, 153, 255);
+            /* Supporting Colors */
+            --off-white: #f8fafc;
+            /* slate-50 */
+            --light-gray: #f1f5f9;
+            /* slate-100 */
+            --medium-gray: #64748b;
+            /* slate-500 */
+            --dark-text: #334155;
+            /* slate-700 */
+            --light-text: #e2e8f0;
+            /* slate-200 */
+            --white: #ffffff;
+            --success: #22c55e;
+            /* green-500 */
+            --info: #0ea5e9;
+            /* sky-500 */
+            --warning: #f59e0b;
+            /* amber-500 */
+            --danger: #ef4444;
+            /* red-500 */
+        }
+
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #334155;
+            overflow-x: hidden;
+            background-color: var(--off-white);
+        }
+
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(135deg, var(--gradient-end) 50%, var(--gradient-start) 50%);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            padding: 18px 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .navbar.scrolled {
+            padding: 12px 0;
+            background-color: rgba(15, 23, 42, 0.98) !important;
+            backdrop-filter: blur(12px);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar-brand img.logo-img {
+            height: 60px;
+            width: 70px;
+            transition: all 0.3s;
+        }
+
+        .navbar-brand img.logo-text {
+            height: 24px;
+            transition: all 0.3s;
+            margin-left: -15px;
+        }
+
+        .navbar.scrolled .navbar-brand img.logo-img {
+            height: 45px;
+        }
+
+        .navbar.scrolled .navbar-brand img.logo-text {
+            height: 24px;
         }
 
         .nav-link {
-            margin: 5px 15px;
+            font-weight: 500;
+            color: #e2e8f0 !important;
+            margin: 0 10px;
+            transition: all 0.3s;
+            position: relative;
+            padding: 8px 12px !important;
+        }
+
+        .nav-link:hover {
+            color: var(--sky-blue) !important;
         }
 
         .nav-link::after {
-            left: 15px;
-            transform: none;
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--sky-blue), var(--teal-blue));
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width 0.3s, opacity 0.3s;
+            opacity: 0;
+            border-radius: 3px;
         }
 
-        .nav-link:hover::after,
+        .nav-link:hover::after {
+            width: 70%;
+            opacity: 1;
+        }
+
+        .nav-link.active {
+            color: var(--sky-blue) !important;
+            font-weight: 600;
+        }
+
         .nav-link.active::after {
-            width: 30px;
-            /* Shorter underline on mobile */
-        }
-    }
-
-    @media (max-width: 768px) {
-        .hero-section h1 {
-            font-size: 2.8rem;
-            /* Smaller heading */
+            width: 70%;
+            opacity: 1;
         }
 
-        .hero-section p {
-            font-size: 1.1rem;
-        }
 
-        .why-choose-us img {
-            margin-bottom: 30px;
-        }
-
-        #popular .card .col-md-4 img {
-            height: 200px;
-            /* Adjust image height on smaller screens */
-        }
-    }
-
-    @media (max-width: 576px) {
+        /* Hero Section */
         .hero-section {
-            padding: 80px 0;
+            background-image: linear-gradient(rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.7)), url('image/course.png');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+            margin-top: 100px;
         }
 
         .hero-section h1 {
-            font-size: 2.2rem;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
 
         .hero-section p {
-            font-size: 1rem;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--light-text);
         }
 
-        .footer-links {
+        .hero-section .btn-primary {
+            background-color: var(--primary-blue);
+            border-color: var(--primary-blue);
+            transition: all 0.3s ease;
+        }
+
+        .hero-section .btn-primary:hover {
+            background-color: var(--secondary-blue);
+            border-color: var(--secondary-blue);
+            transform: translateY(-2px);
+        }
+
+        .hero-section .btn-outline-light {
+            color: var(--white);
+            border-color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .hero-section .btn-outline-light:hover {
+            background-color: rgb(255, 255, 255);
+            color: black;
+            transform: translateY(-2px);
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-weight: 700;
+            color: var(--navy-blue);
+            /* Darker title */
+            display: inline-block;
+            padding-bottom: 10px;
+            margin-bottom: 0;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-blue);
+            /* Accent color */
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* Course Card */
+        .course-card {
+            background: var(--white);
+            border-radius: 12px;
+            /* Slightly more rounded */
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(30, 41, 59, 0.08);
+            /* Subtle shadow */
+            transition: all 0.3s ease;
             margin-bottom: 30px;
+            border: 1px solid var(--light-gray);
+            /* Light border */
         }
 
-        .modal-dialog {
-            margin: 10px;
+        .course-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(30, 41, 59, 0.12);
         }
 
-        .modal-content {
+        .course-img {
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .course-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .course-card:hover .course-img img {
+            transform: scale(1.05);
+        }
+
+        .course-body {
+            padding: 25px;
+            /* More padding */
+        }
+
+        .course-title {
+            font-weight: 600;
+            color: var(--navy-blue);
+            margin-bottom: 10px;
+            font-size: 1.15rem;
+        }
+
+        .course-desc {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            min-height: 55px;
+            /* Ensure consistent height */
+        }
+
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            border-top: 1px solid var(--light-gray);
+            padding-top: 15px;
+        }
+
+        .course-price {
+            font-weight: 700;
+            color: var(--primary-blue);
+            /* Use primary blue */
+            font-size: 1.2rem;
+        }
+
+        .course-duration {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .course-duration i {
+            margin-right: 5px;
+            color: var(--primary-blue);
+            /* Icon color */
+        }
+
+        .btn-enroll {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            /* Larger padding */
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 20px;
+            /* Space above button */
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-enroll:hover {
+            background-color: var(--secondary-blue);
+            color: var(--white);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 2;
+            padding: 6px 12px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        /* Badge colors */
+        .badge.bg-success {
+            background-color: var(--success) !important;
+        }
+
+        .badge.bg-info {
+            background-color: var(--info) !important;
+            color: var(--white) !important;
+        }
+
+        .badge.bg-warning {
+            background-color: var(--warning) !important;
+            color: var(--navy-blue) !important;
+        }
+
+        .badge.bg-danger {
+            background-color: var(--danger) !important;
+        }
+
+        /* Popular Courses Section */
+        #popular {
+            background-color: var(--sky-blue);
+            /* Very light blue background */
+        }
+
+        #popular .card {
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        #popular .card:hover {
+            box-shadow: 0 8px 25px rgba(30, 41, 59, 0.1);
+            transform: translateY(-5px);
+        }
+
+        #popular .card-title {
+            color: var(--navy-blue);
+        }
+
+        #popular .card-text {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+
+        #popular .text-primary {
+            color: var(--primary-blue) !important;
+        }
+
+        #popular .btn-outline-primary {
+            color: var(--primary-blue);
+            border-color: var(--primary-blue);
+            transition: all 0.3s ease;
+        }
+
+        #popular .btn-outline-primary:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        #popular .card-footer small {
+            color: var(--medium-gray);
+        }
+
+        #popular .card-footer i {
+            color: var(--primary-blue);
+            margin-right: 4px;
+        }
+
+        #popular .position-absolute {
+            top: 10px !important;
+            /* Adjusted from top-10 */
+            left: 10px !important;
+            /* Adjusted from start-10 */
+        }
+
+
+        /* Why Choose Us Section */
+        .why-choose-us-icon-bg {
+            background-color: rgba(59, 130, 246, 0.1);
+            /* primary-blue with opacity */
+            color: var(--primary-blue);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            /* Prevent shrinking */
+        }
+
+        .why-choose-us h5 {
+            color: var(--navy-blue);
+            font-weight: 600;
+        }
+
+        .why-choose-us p {
+            color: var(--medium-gray);
+        }
+
+
+        /* Testimonials Section */
+        #testimonials {
+            background-color: var(--sky-blue);
+            /* Match popular courses background */
+        }
+
+        #testimonials .card {
+            border-radius: 10px;
+        }
+
+        #testimonials .card-text {
+            color: var(--medium-gray);
+            font-style: italic;
+            margin-bottom: 25px !important;
+        }
+
+        #testimonials h6 {
+            color: var(--navy-blue);
+        }
+
+        #testimonials small {
+            color: var(--medium-gray);
+        }
+
+        #testimonials .text-warning i {
+            color: var(--warning);
+            /* Keep stars yellow/gold */
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--navy-blue);
+            color: white;
+            padding: 100px 0 30px;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            /* position: absolute; */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0), var(--navy-blue));
+        }
+
+        .footer-logo {
+            height: 70px;
+            margin-bottom: 25px;
+        }
+
+        .footer-about p {
+            color: #cbd5e1;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .footer-links h5 {
+            font-weight: 700;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links h5::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--teal-blue));
+            bottom: 0;
+            left: 0;
+            border-radius: 3px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+            transition: all 0.3s;
+        }
+
+        .footer-links li:hover {
+            transform: translateX(5px);
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-links a:hover {
+            color: var(--sky-blue);
+        }
+
+        .footer-links a i {
+            margin-right: 10px;
+            color: var(--sky-blue);
+            font-size: 0.8rem;
+        }
+
+        .social-icons {
+            margin-top: 25px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 42px;
+            margin-right: 12px;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: linear-gradient(135deg, var(--primary-blue), var(--teal-blue));
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .newsletter-form .form-control {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            height: 50px;
             border-radius: 8px;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-form .form-control::placeholder {
+            color: #cbd5e1;
+            opacity: 0.8;
+        }
+
+        .newsletter-form .btn {
+            background: linear-gradient(90deg, var(--primary-blue), var(--teal-blue));
+            color: white;
+            border: none;
+            height: 50px;
+            border-radius: 8px;
+            font-weight: 600;
+            width: 100%;
+            transition: all 0.3s;
+        }
+
+        .newsletter-form .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 25px;
+            margin-top: 50px;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        .copyright a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .copyright a:hover {
+            color: white;
+        }
+
+        /* Animations */
+        .animate-up {
+            animation: fadeInUp 1s both;
+        }
+
+        .animate-delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .animate-delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .animate-delay-3 {
+            animation-delay: 0.6s;
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+
+        /* Modal Styles */
+        .modal-content {
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-header {
+            border-bottom: 1px solid var(--light-gray);
+            padding: 1.5rem;
+            /* More padding */
+        }
+
+        .modal-title {
+            font-weight: 600;
+            color: var(--navy-blue);
+            /* Dark title */
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        .modal-footer {
+            border-top: 1px solid var(--light-gray);
+            padding: 1rem 1.5rem;
+            background-color: var(--off-white);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
         }
 
         .course-details-img {
-            height: 200px;
+            height: 250px;
+            /* Larger image */
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            width: 100%;
         }
-    }
+
+        .course-features {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .course-features li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            /* Align icon top */
+            color: var(--dark-text);
+            font-size: 0.95rem;
+        }
+
+        .course-features i {
+            color: var(--primary-blue);
+            /* Blue check icon */
+            margin-right: 12px;
+            width: 20px;
+            padding-top: 3px;
+            /* Align icon better with text */
+            flex-shrink: 0;
+        }
+
+        .modal .bg-light {
+            background-color: var(--sky-blue) !important;
+            /* Light blue bg */
+            padding: 20px !important;
+        }
+
+        .modal h6 {
+            color: var(--navy-blue);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .modal .text-primary {
+            color: var(--primary-blue) !important;
+        }
+
+        .modal .btn-primary {
+            background-color: var(--primary-blue);
+            border-color: var(--primary-blue);
+            transition: all 0.3s ease;
+        }
+
+        .modal .btn-primary:hover {
+            background-color: var(--secondary-blue);
+            border-color: var(--secondary-blue);
+            transform: translateY(-2px);
+        }
+
+
+        /* Responsive Adjustments */
+        @media (max-width: 991px) {
+            .navbar-nav {
+                margin-top: 15px;
+                /* background-color: var(--navy-blue); */
+                border-radius: 8px;
+                padding: 10px 0;
+            }
+
+            .nav-link {
+                margin: 5px 15px;
+            }
+
+            .nav-link::after {
+                left: 15px;
+                transform: none;
+            }
+
+            .nav-link:hover::after,
+            .nav-link.active::after {
+                width: 30px;
+                /* Shorter underline on mobile */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.8rem;
+                /* Smaller heading */
+            }
+
+            .hero-section p {
+                font-size: 1.1rem;
+            }
+
+            .why-choose-us img {
+                margin-bottom: 30px;
+            }
+
+            #popular .card .col-md-4 img {
+                height: 200px;
+                /* Adjust image height on smaller screens */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-section {
+                padding: 80px 0;
+            }
+
+            .hero-section h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-section p {
+                font-size: 1rem;
+            }
+
+            .footer-links {
+                margin-bottom: 30px;
+            }
+
+            .modal-dialog {
+                margin: 10px;
+            }
+
+            .modal-content {
+                border-radius: 8px;
+            }
+
+            .course-details-img {
+                height: 200px;
+            }
+        }
     </style>
 </head>
 
 <body>
-     <!-- Navigation -->
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
@@ -1450,9 +1450,9 @@
                 <div class="section-title text-start mb-4 pb-0">
                     <h2 class="after-none">Why Choose Our IT Courses?</h2>
                     <style>
-                    .section-title h2.after-none::after {
-                        display: none;
-                    }
+                        .section-title h2.after-none::after {
+                            display: none;
+                        }
                     </style> <!-- Quick hide for the underline -->
                 </div>
                 <div class="d-flex mb-4">
@@ -1582,7 +1582,7 @@
         </div>
     </section>
 
-     <!-- Footer -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
@@ -1698,7 +1698,7 @@
                             <div class="bg-light p-3 rounded">
                                 <h4 class="text-primary fw-bold">₹38,000</h4>
                                 <p class="mb-2 text-muted small">or 3 monthly payments of ₹3,333</p>
-                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                                <a href="contact.html" class="btn btn-primary w-100 mt-2">Enroll Now</a>
                             </div>
                         </div>
                     </div>
@@ -1753,7 +1753,7 @@
                             <div class="bg-light p-3 rounded">
                                 <h4 class="text-primary fw-bold">₹12,999</h4>
                                 <p class="mb-2 text-muted small">or 4 monthly payments of ₹3,750</p>
-                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                                <a href="contact.html" class="btn btn-primary w-100 mt-2">Enroll Now</a>
                             </div>
                         </div>
                     </div>
@@ -1805,7 +1805,7 @@
                             <div class="bg-light p-3 rounded">
                                 <h4 class="text-primary fw-bold">₹9,999</h4>
                                 <p class="mb-2 text-muted small">or 3 monthly payments of ₹3,666</p>
-                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                                 <a href="contact.html" class="btn btn-primary w-100 mt-2">Enroll Now</a>
                             </div>
                         </div>
                     </div>
@@ -1858,7 +1858,7 @@
                             <div class="bg-light p-3 rounded">
                                 <h4 class="text-primary fw-bold">₹10,499</h4>
                                 <p class="mb-2 text-muted small">or 3 monthly payments of ₹3,833</p>
-                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                                <a href="contact.html" class="btn btn-primary w-100 mt-2">Enroll Now</a>
                             </div>
                         </div>
                     </div>
@@ -1908,7 +1908,7 @@
                             <div class="bg-light p-3 rounded">
                                 <h4 class="text-primary fw-bold">₹8,499</h4>
                                 <p class="mb-2 text-muted small">or 3 monthly payments of ₹3,000</p>
-                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                                 <a href="contact.html" class="btn btn-primary w-100 mt-2">Enroll Now</a>
                             </div>
                         </div>
                     </div>
@@ -1959,7 +1959,7 @@
                             <div class="bg-light p-3 rounded">
                                 <h4 class="text-primary fw-bold">₹11,999</h4>
                                 <p class="mb-2 text-muted small">or 3 monthly payments of ₹4,333</p>
-                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                                 <a href="contact.html" class="btn btn-primary w-100 mt-2">Enroll Now</a>
                             </div>
                         </div>
                     </div>
@@ -2009,7 +2009,7 @@
                             <div class="bg-light p-3 rounded">
                                 <h4 class="text-primary fw-bold">₹14,999</h4>
                                 <p class="mb-2 text-muted small">or 4 monthly payments of ₹4,250</p>
-                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                                <a href="contact.html" class="btn btn-primary w-100 mt-2">Enroll Now</a>
                             </div>
                         </div>
                     </div>
@@ -2060,7 +2060,7 @@
                             <div class="bg-light p-3 rounded">
                                 <h4 class="text-primary fw-bold">₹15,499</h4>
                                 <p class="mb-2 text-muted small">or 4 monthly payments of ₹4,375</p>
-                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                                <a href="contact.html" class="btn btn-primary w-100 mt-2">Enroll Now</a>
                             </div>
                         </div>
                     </div>
@@ -2110,7 +2110,7 @@
                             <div class="bg-light p-3 rounded">
                                 <h4 class="text-primary fw-bold">₹13,999</h4>
                                 <p class="mb-2 text-muted small">or 3 monthly payments of ₹4,999</p>
-                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                                <a href="contact.html" class="btn btn-primary w-100 mt-2">Enroll Now</a>
                             </div>
                         </div>
                     </div>
@@ -2160,7 +2160,7 @@
                             <div class="bg-light p-3 rounded">
                                 <h4 class="text-primary fw-bold">₹11,499</h4>
                                 <p class="mb-2 text-muted small">or 3 monthly payments of ₹4,166</p>
-                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                                 <a href="contact.html" class="btn btn-primary w-100 mt-2">Enroll Now</a>
                             </div>
                         </div>
                     </div>
@@ -2210,7 +2210,7 @@
                             <div class="bg-light p-3 rounded">
                                 <h4 class="text-primary fw-bold">₹6,999</h4>
                                 <p class="mb-2 text-muted small">or 2 monthly payments of ₹3,750</p>
-                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                                 <a href="contact.html" class="btn btn-primary w-100 mt-2">Enroll Now</a>
                             </div>
                         </div>
                     </div>
@@ -2261,7 +2261,7 @@
                             <div class="bg-light p-3 rounded">
                                 <h4 class="text-primary fw-bold">₹6,499</h4>
                                 <p class="mb-2 text-muted small">or 2 monthly payments of ₹3,500</p>
-                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                                <a href="contact.html" class="btn btn-primary w-100 mt-2">Enroll Now</a>
                             </div>
                         </div>
                     </div>
@@ -2311,7 +2311,7 @@
                             <div class="bg-light p-3 rounded">
                                 <h4 class="text-primary fw-bold">₹9,999</h4>
                                 <p class="mb-2 text-muted small">or 3 monthly payments of ₹3,666</p>
-                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                                 <a href="contact.html" class="btn btn-primary w-100 mt-2">Enroll Now</a>
                             </div>
                         </div>
                     </div>
@@ -2361,7 +2361,7 @@
                             <div class="bg-light p-3 rounded">
                                 <h4 class="text-primary fw-bold">₹4,999</h4>
                                 <p class="mb-2 text-muted small">or 2 monthly payments of ₹2,750</p>
-                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                                <a href="contact.html" class="btn btn-primary w-100 mt-2">Enroll Now</a>
                             </div>
                         </div>
                     </div>
@@ -2411,7 +2411,7 @@
                             <div class="bg-light p-3 rounded">
                                 <h4 class="text-primary fw-bold">₹7,999</h4>
                                 <p class="mb-2 text-muted small">or 2 monthly payments of ₹4,250</p>
-                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                                 <a href="contact.html" class="btn btn-primary w-100 mt-2">Enroll Now</a>
                             </div>
                         </div>
                     </div>
@@ -2461,7 +2461,7 @@
                             <div class="bg-light p-3 rounded">
                                 <h4 class="text-primary fw-bold">₹8,499</h4>
                                 <p class="mb-2 text-muted small">or 2 monthly payments of ₹4,500</p>
-                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                                <a href="contact.html" class="btn btn-primary w-100 mt-2">Enroll Now</a>
                             </div>
                         </div>
                     </div>
@@ -2512,7 +2512,7 @@
                             <div class="bg-light p-3 rounded">
                                 <h4 class="text-primary fw-bold">₹3,999</h4>
                                 <p class="mb-2 text-muted small">or 2 monthly payments of ₹2,250</p>
-                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                                 <a href="contact.html" class="btn btn-primary w-100 mt-2">Enroll Now</a>
                             </div>
                         </div>
                     </div>
@@ -2563,7 +2563,7 @@
                             <div class="bg-light p-3 rounded">
                                 <h4 class="text-primary fw-bold">₹3,499</h4>
                                 <p class="mb-2 text-muted small">or 2 monthly payments of ₹1,999</p>
-                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                                 <a href="contact.html" class="btn btn-primary w-100 mt-2">Enroll Now</a>
                             </div>
                         </div>
                     </div>
@@ -2613,7 +2613,7 @@
                             <div class="bg-light p-3 rounded">
                                 <h4 class="text-primary fw-bold">₹2,999</h4>
                                 <p class="mb-2 text-muted small">or 2 monthly payments of ₹1,666</p>
-                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                                <a href="contact.html" class="btn btn-primary w-100 mt-2">Enroll Now</a>
                             </div>
                         </div>
                     </div>
@@ -2629,34 +2629,34 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-    // Smooth scrolling for anchor links (optional, Bootstrap handles modals)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            // Prevent default if it's not a modal trigger
-            if (!this.hasAttribute('data-bs-toggle')) {
-                e.preventDefault();
-                const targetElement = document.querySelector(this.getAttribute('href'));
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
+        // Smooth scrolling for anchor links (optional, Bootstrap handles modals)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                // Prevent default if it's not a modal trigger
+                if (!this.hasAttribute('data-bs-toggle')) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(this.getAttribute('href'));
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
                 }
+            });
+        });
+
+        // Change navbar style on scroll
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled'); // Use the new class name
+            } else {
+                navbar.classList.remove('scrolled'); // Use the new class name
             }
         });
-    });
 
-    // Change navbar style on scroll
-    window.addEventListener('scroll', function() {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled'); // Use the new class name
-        } else {
-            navbar.classList.remove('scrolled'); // Use the new class name
-        }
-    });
-
-    // Set current year in footer
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 </body>
 
