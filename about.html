@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic Minds - Premium Online Learning Platform</title>
+    <meta name="description" content="Leading IT company offering end-to-end solutions including web & app development, custom software projects, and industry-focused IT courses. 
+        Empowering businesses and learners with cutting-edge technology and training.">
+    <link rel="icon" type="image/x-icon" href="image\logo.png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            /* Blue Palette */
+            --primary-blue: #3b82f6;
+            /* blue-500 */
+            --secondary-blue: #2563eb;
+            /* blue-600 */
+            --light-blue: #93c5fd;
+            /* blue-300 */
+            --sky-blue: #e0f2fe;
+            /* sky-100 */
+            --navy-blue: #1e293b;
+            /* slate-800 */
+
+            --primary-blue: #1a56db;
+            --dark-blue: #133b9a;
+            --light-blue: #3b82f6;
+            --sky-blue: #93c5fd;
+            --navy-blue: #0f172a;
+            --off-white: #f8fafc;
+            --accent-blue: #2563eb;
+            --teal-blue: #0d9488;
+            --gradient-start: #1e3a8a;
+            --gradient-end: rgb(122, 153, 255);
+            /* Supporting Colors */
+            --off-white: #f8fafc;
+            /* slate-50 */
+            --light-gray: #f1f5f9;
+            /* slate-100 */
+            --medium-gray: #64748b;
+            /* slate-500 */
+            --dark-text: #334155;
+            /* slate-700 */
+            --light-text: #e2e8f0;
+            /* slate-200 */
+            --white: #ffffff;
+            --success: #22c55e;
+            /* green-500 */
+            --info: #0ea5e9;
+            /* sky-500 */
+            --warning: #f59e0b;
+            /* amber-500 */
+            --danger: #ef4444;
+            /* red-500 */
+        }
+
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #334155;
+            overflow-x: hidden;
+            background-color: var(--off-white);
+        }
+
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(135deg, var(--gradient-end) 50%, var(--gradient-start) 50%);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            padding: 18px 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .navbar.scrolled {
+            padding: 12px 0;
+            background-color: rgba(15, 23, 42, 0.98) !important;
+            backdrop-filter: blur(12px);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar-brand img.logo-img {
+            height: 60px;
+            width: 70px;
+            transition: all 0.3s;
+        }
+
+        .navbar-brand img.logo-text {
+            height: 24px;
+            transition: all 0.3s;
+            margin-left: -15px;
+        }
+
+        .navbar.scrolled .navbar-brand img.logo-img {
+            height: 45px;
+        }
+
+        .navbar.scrolled .navbar-brand img.logo-text {
+            height: 24px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: #e2e8f0 !important;
+            margin: 0 10px;
+            transition: all 0.3s;
+            position: relative;
+            padding: 8px 12px !important;
+        }
+
+        .nav-link:hover {
+            color: var(--sky-blue) !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--sky-blue), var(--teal-blue));
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width 0.3s, opacity 0.3s;
+            opacity: 0;
+            border-radius: 3px;
+        }
+
+        .nav-link:hover::after {
+            width: 70%;
+            opacity: 1;
+        }
+
+        .nav-link.active {
+            color: var(--sky-blue) !important;
+            font-weight: 600;
+        }
+
+        .nav-link.active::after {
+            width: 70%;
+            opacity: 1;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--dark-blue) 30%, var(--sky-blue) 100%);
+            color: white;
+            padding: 140px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero-section h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-section h1::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background-color: white;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .hero-section .lead {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* About Content */
+        .about-section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom, rgba(222, 235, 255, 0.5), rgba(249, 250, 251, 0));
+        }
+
+        .about-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(26, 117, 255, 0.08);
+            margin-bottom: 40px;
+            border-left: 5px solid var(--accent-blue);
+            transition: all 0.4s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(26, 117, 255, 0.12);
+        }
+
+        .about-card h2 {
+            color: var(--navy-blue);
+            font-weight: 600;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .about-card h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-blue);
+            bottom: 0;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        .about-card p {
+            color: #4a5568;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 100px 0;
+            background-color: var(--sky-blue);
+            position: relative;
+        }
+
+        .team-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom, rgba(249, 250, 251, 1), rgba(222, 235, 255, 0));
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-weight: 700;
+            color: var(--navy-blue);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--royal-blue);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 20px auto 0;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(26, 117, 255, 0.1);
+            margin-bottom: 30px;
+            transition: all 0.4s ease;
+            text-align: center;
+            height: 100%;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(26, 117, 255, 0.15);
+        }
+
+        .team-img {
+            height: 240px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .team-img::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+        }
+
+        .team-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .team-card:hover .team-img img {
+            transform: scale(1.08);
+        }
+
+        .team-body {
+            padding: 25px 20px;
+        }
+
+        .team-body h4 {
+            font-weight: 600;
+            color: var(--navy-blue);
+            margin-bottom: 5px;
+            font-size: 1.25rem;
+        }
+
+        .team-body p {
+            color: var(--royal-blue);
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .team-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            background-color: rgba(7, 71, 166, 0.1);
+            color: var(--royal-blue);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .team-social a:hover {
+            background-color: var(--royal-blue);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--teal-blue), var(--accent-blue));
+            color: white;
+            position: relative;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            /* background: linear-gradient(to bottom, rgba(222, 235, 255, 1), rgba(0, 82, 204, 0)); */
+        }
+
+        .stat-item {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 30px 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--navy-blue);
+            color: white;
+            padding: 100px 0 30px;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            /* position: absolute; */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0), var(--navy-blue));
+        }
+
+        .footer-logo {
+            height: 70px;
+            margin-bottom: 25px;
+        }
+
+        .footer-about p {
+            color: #cbd5e1;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .footer-links h5 {
+            font-weight: 700;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links h5::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--teal-blue));
+            bottom: 0;
+            left: 0;
+            border-radius: 3px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+            transition: all 0.3s;
+        }
+
+        .footer-links li:hover {
+            transform: translateX(5px);
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-links a:hover {
+            color: var(--sky-blue);
+        }
+
+        .footer-links a i {
+            margin-right: 10px;
+            color: var(--sky-blue);
+            font-size: 0.8rem;
+        }
+
+        .social-icons {
+            margin-top: 25px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 42px;
+            margin-right: 12px;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: linear-gradient(135deg, var(--primary-blue), var(--teal-blue));
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .newsletter-form .form-control {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            height: 50px;
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-form .form-control::placeholder {
+            color: #cbd5e1;
+            opacity: 0.8;
+        }
+
+        .newsletter-form .btn {
+            background: linear-gradient(90deg, var(--primary-blue), var(--teal-blue));
+            color: white;
+            border: none;
+            height: 50px;
+            border-radius: 8px;
+            font-weight: 600;
+            width: 100%;
+            transition: all 0.3s;
+        }
+
+        .newsletter-form .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 25px;
+            margin-top: 50px;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        .copyright a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .copyright a:hover {
+            color: white;
+        }
+
+        /* Animations */
+        .animate-up {
+            animation: fadeInUp 1s both;
+        }
+
+        .animate-delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .animate-delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .animate-delay-3 {
+            animation-delay: 0.6s;
+        }
+
+        @media (max-width: 991px) {
+            .hero-section {
+                padding: 120px 0 80px;
+            }
+
+            .hero-section h1 {
+                font-size: 2.8rem;
+            }
+
+            .stat-number {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.4rem;
+            }
+
+            .hero-section .lead {
+                font-size: 1.1rem;
+            }
+
+            .about-card {
+                padding: 30px;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .team-img {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="image/logo2.png" alt="Logic Minds Logo" class="logo-img">
+                <img src="image/name.png" alt="Logic Minds" class="logo-text">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="course.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="login.php">Login</a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container my-3">
+            <h1 class="my-2">About Logic Minds</h1>
+            <p class="lead my-3">Empowering learners through innovative education and transformative learning
+                experiences</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="about-card">
+                        <h2>Our Mission</h2>
+                        <p>At Logic Minds, we're dedicated to empowering learners from all walks of life with
+                            high-quality, accessible education. Our mission is to make learning engaging, flexible, and
+                            tailored to your unique needs. Whether you're looking to advance your career, explore a new
+                            hobby, or gain new skills, we're here to support your journey every step of the way. Join
+                            our community of passionate learners and unlock your potential with courses designed to fit
+                            your life.</p>
+                    </div>
+
+                    <div class="about-card">
+                        <h2>Who We Are</h2>
+                        <p>Welcome to Logic Minds, where learning meets innovation. We are a team of educators,
+                            technologists, and lifelong learners committed to revolutionizing online education. Our
+                            platform offers a diverse range of courses designed by industry experts, all crafted to
+                            provide you with practical knowledge and real-world skills. With a user-friendly interface
+                            and a supportive community, we strive to make your learning experience enjoyable and
+                            effective. Explore our offerings and start your educational adventure today.</p>
+                    </div>
+
+                    <div class="about-card">
+                        <h2>Our Story</h2>
+                        <p>At Logic Minds, our story began with a simple idea: to make quality education accessible to
+                            everyone, everywhere. What started as a small project has grown into a vibrant platform
+                            where learners can find courses on a wide array of subjects, from technology and business to
+                            arts and personal development. Our team is passionate about creating a learning environment
+                            that is inclusive, interactive, and impactful. Discover our courses, meet our instructors,
+                            and see how we can help you achieve your educational goals.</p>
+                    </div>
+
+                    <div class="about-card">
+                        <h2>Our Philosophy</h2>
+                        <p>At Logic Minds, we believe that learning should be a journey of discovery, not just a
+                            destination. Our philosophy is rooted in creating an engaging and interactive educational
+                            experience that caters to diverse learning styles and preferences. We are committed to
+                            providing high-quality content that is both relevant and practical, helping you to apply
+                            what you learn in real-world scenarios. Join us and be part of a learning revolution where
+                            your growth is our priority.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <!-- <section class="team-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our Team</h2>
+                <p class="text-muted">The passionate educators and experts behind Logic Minds</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="team-card h-100">
+                        <div class="team-img">
+                            <img src="/api/placeholder/400/320" alt="Alex Johnson">
+                        </div>
+                        <div class="team-body">
+                            <h4>Alex Johnson</h4>
+                            <p>Founder & CEO</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="team-card h-100">
+                        <div class="team-img">
+                            <img src="/api/placeholder/400/320" alt="Sarah Williams">
+                        </div>
+                        <div class="team-body">
+                            <h4>Sarah Williams</h4>
+                            <p>Head of Education</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="team-card h-100">
+                        <div class="team-img">
+                            <img src="/api/placeholder/400/320" alt="Michael Chen">
+                        </div>
+                        <div class="team-body">
+                            <h4>Michael Chen</h4>
+                            <p>Tech Lead</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="team-card h-100">
+                        <div class="team-img">
+                            <img src="/api/placeholder/400/320" alt="Priya Sharma">
+                        </div>
+                        <div class="team-body">
+                            <h4>Priya Sharma</h4>
+                            <p>Content Director</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number">1500+</div>
+                        <div class="stat-label">Students Enrolled</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label">Courses Offered</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Expert Instructors</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Satisfaction Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="footer-about">
+                        <img src="image\logo2.png" alt="Logic Minds Logo" class="footer-logo">
+                        <p>Logic Minds is a premier online learning platform committed to providing high-quality,
+                            accessible education to help individuals achieve their professional goals.</p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/logicmindsbyparii" target="_blank"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
+                            <a href="https://www.instagram.com/logic_minds_by_parii/" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/logicmindsbyparii/" target="_blank"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                            <!-- <a href="#"><i class="fab fa-youtube"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="index.php"><i class="fas fa-chevron-right"></i> Home</a></li>
+                            <li><a href="course.php"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                            <li><a href="about.php"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                            <li><a href="contact.php"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                            <!-- <li><a href="login.php"><i class="fas fa-chevron-right"></i> Login</a></li> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Categories</h5>
+                        <ul>
+                            <li><a href="course.php"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+                            <li><a href="course.php"><i class="fas fa-chevron-right"></i> Data Science</a></li>
+                            <li><a href="course.php"><i class="fas fa-chevron-right"></i> Cloud Computing</a></li>
+                            <li><a href="course.php"><i class="fas fa-chevron-right"></i> Cybersecurity</a></li>
+                            <li><a href="course.php"><i class="fas fa-chevron-right"></i> Mobile Development</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="footer-links">
+                        <h5>Newsletter</h5>
+                        <p>Subscribe to our newsletter for the latest course updates, offers, and learning resources.
+                        </p>
+                        <form class="mt-4 newsletter-form">
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Your Email Address">
+                            </div>
+                            <button class="btn" type="button">Subscribe Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>©
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script> Logic Minds. All Rights Reserved.
+                </p>
+                <p>Designed & Powered by <a href="https://www.instagram.com/logic_minds_by_parii/" target="_blank"
+                        rel="noopener noreferrer"><b>Logic Minds by Parii</b></a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Change navbar style on scroll
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').innerHTML = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

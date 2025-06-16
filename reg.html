@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Logic Minds</title>
+     <meta name="description" content="Leading IT company offering end-to-end solutions including web & app development, custom software projects, and industry-focused IT courses. 
+        Empowering businesses and learners with cutting-edge technology and training.">
+    <link rel="icon" type="image/x-icon" href="image\logo.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+    :root {
+        --primary-color: #2563eb;
+        --secondary-color: #1e40af;
+        --dark-color: #1e293b;
+        --light-color: #f8fafc;
+        --error-color: #dc3545;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--light-color);
+        color: #334155;
+        line-height: 1.5;
+    }
+
+    .auth-container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 2rem 0;
+    }
+
+    .auth-card {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .auth-form {
+        padding: 2rem;
+        background: white;
+    }
+
+    .auth-image {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+    }
+
+    .auth-logo {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .auth-logo img {
+        height: 40px;
+    }
+
+    .auth-title {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .auth-title h2 {
+        font-weight: 600;
+        color: var(--dark-color);
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .auth-title p {
+        color: #64748b;
+        font-size: 0.9rem;
+    }
+
+    .form-control {
+        height: 45px;
+        border-radius: 6px;
+        border: 1px solid #ced4da;
+        padding: 8px 12px;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .form-control:focus {
+        box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+        border-color: var(--primary-color);
+    }
+
+    .form-label {
+        font-weight: 500;
+        margin-bottom: 0.25rem;
+        color: var(--dark-color);
+        font-size: 0.9rem;
+    }
+
+    .btn-auth {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 6px;
+        font-weight: 500;
+        transition: all 0.3s;
+        width: 100%;
+        font-size: 0.95rem;
+    }
+
+    .btn-auth:hover {
+        background-color: var(--secondary-color);
+    }
+
+    .form-check-label {
+        font-size: 0.85rem;
+    }
+
+    .password-toggle {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #94a3b8;
+    }
+
+    .form-group {
+        position: relative;
+        margin-bottom: 1rem;
+    }
+
+    .divider {
+        display: flex;
+        align-items: center;
+        margin: 1.25rem 0;
+        color: #64748b;
+        font-size: 0.85rem;
+    }
+
+    .divider::before,
+    .divider::after {
+        content: "";
+        flex: 1;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .divider::before {
+        margin-right: 1rem;
+    }
+
+    .divider::after {
+        margin-left: 1rem;
+    }
+
+    .social-auth {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .social-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1rem;
+        transition: all 0.3s;
+    }
+
+    .social-btn:hover {
+        opacity: 0.9;
+    }
+
+    .facebook-btn {
+        background-color: #3b5998;
+    }
+
+    .google-btn {
+        background-color: #db4437;
+    }
+
+    .linkedin-btn {
+        background-color: #0077b5;
+    }
+
+    .auth-footer {
+        text-align: center;
+        margin-top: 1rem;
+        color: #64748b;
+        font-size: 0.85rem;
+    }
+
+    .auth-footer a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .auth-image-content {
+        color: white;
+        text-align: center;
+    }
+
+    .auth-image-content h3 {
+        font-weight: 600;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        font-size: 1.3rem;
+    }
+
+    .auth-image-content p {
+        font-size: 0.9rem;
+        opacity: 0.9;
+    }
+
+    .error-message {
+        color: var(--error-color);
+        font-size: 0.8rem;
+        margin-top: -0.5rem;
+        margin-bottom: 0.5rem;
+        display: none;
+    }
+
+    .is-invalid {
+        border-color: var(--error-color) !important;
+    }
+
+    .success-message {
+        color: #28a745;
+        font-size: 0.9rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        display: none;
+    }
+
+    @media (max-width: 992px) {
+        .auth-image {
+            display: none;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .auth-form {
+            padding: 1.5rem;
+        }
+
+        .auth-container {
+            padding: 1rem;
+        }
+
+        .row>[class*="col-"] {
+            padding-right: 0.5rem;
+            padding-left: 0.5rem;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="auth-card">
+                        <div class="row g-0">
+                            <!-- Registration Form -->
+                            <div class="col-lg-6">
+                                <div class="auth-form">
+                                    <div class="auth-logo">
+                                        <img src="image\logo2.png" alt="Logic Minds">
+                                    </div>
+                                    <div class="auth-title">
+                                        <h2>Create Your Account</h2>
+                                        <p>Join thousands of learners worldwide</p>
+                                    </div>
+
+                                    <div id="successMessage" class="success-message">
+                                        Registration successful! Redirecting to login page...
+                                    </div>
+
+                                    <form id="registerForm">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="firstName" class="form-label">First Name</label>
+                                                    <input type="text" class="form-control" id="firstName"
+                                                        name="firstName" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="lastName" class="form-label">Last Name</label>
+                                                    <input type="text" class="form-control" id="lastName"
+                                                        name="lastName" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="email" class="form-label">Email Address</label>
+                                            <input type="email" class="form-control" id="email" name="email" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="password" class="form-label">Password</label>
+                                            <input type="password" class="form-control" id="password" name="password"
+                                                required>
+                                            <i class="fas fa-eye password-toggle my-3" id="togglePassword"></i>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                            <input type="password" class="form-control" id="confirmPassword"
+                                                name="confirmPassword" required>
+                                            <i class="fas fa-eye password-toggle my-2" id="toggleConfirmPassword"></i>
+                                            <div id="passwordError" class="error-message">
+                                                Passwords do not match
+                                            </div>
+                                        </div>
+
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                                            <label class="form-check-label" for="termsCheck">
+                                                I agree to the <a href="#" class="text-primary">Terms</a> and <a
+                                                    href="#" class="text-primary">Privacy Policy</a>
+                                            </label>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-auth mb-2">
+                                            <i class="fas fa-user-plus me-2"></i> Register
+                                        </button>
+
+                                        <div class="divider">OR</div>
+
+                                        <div class="auth-footer">
+                                            Already have an account? <a href="login.php">Sign In</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Right Side Image -->
+                            <div class="col-lg-6 d-none d-lg-block">
+                                <div class="auth-image">
+                                    <div class="auth-image-content">
+                                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" 
+                                             alt="People learning together" class="img-fluid rounded">
+                                        <h3>Join Our Learning Community</h3>
+                                        <p>Access premium courses and resources</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Toggle password visibility
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+        const toggleConfirmPassword = document.querySelector('#toggleConfirmPassword');
+        const confirmPassword = document.querySelector('#confirmPassword');
+        const passwordError = document.querySelector('#passwordError');
+        const registerForm = document.querySelector('#registerForm');
+        const successMessage = document.querySelector('#successMessage');
+
+        togglePassword.addEventListener('click', function() {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+
+        toggleConfirmPassword.addEventListener('click', function() {
+            const type = confirmPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+            confirmPassword.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+
+        // Password matching validation
+        function validatePassword() {
+            if (password.value !== confirmPassword.value) {
+                confirmPassword.classList.add('is-invalid');
+                passwordError.style.display = 'block';
+                return false;
+            } else {
+                confirmPassword.classList.remove('is-invalid');
+                passwordError.style.display = 'none';
+                return true;
+            }
+        }
+
+        confirmPassword.addEventListener('input', validatePassword);
+        password.addEventListener('input', validatePassword);
+
+        // Form submission handling
+        registerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate form
+            if (!validatePassword()) {
+                return;
+            }
+
+            if (!registerForm.checkValidity()) {
+                // If form is invalid, show native validation messages
+                registerForm.classList.add('was-validated');
+                return;
+            }
+
+            // Simulate form submission (replace with actual AJAX call)
+            console.log('Form submitted successfully');
+            
+            // Show success message
+            successMessage.style.display = 'block';
+            
+            // Hide the form
+            registerForm.style.display = 'none';
+            
+            // Redirect to login page after 3 seconds
+            setTimeout(function() {
+                window.location.href = 'login.php';
+            }, 2000);
+        });
+    });
+    </script>
+</body>
+
+</html>

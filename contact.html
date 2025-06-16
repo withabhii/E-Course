@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic Minds - Premium Online Learning Platform</title>
+    <meta name="description" content="Leading IT company offering end-to-end solutions including web & app development, custom software projects, and industry-focused IT courses. 
+        Empowering businesses and learners with cutting-edge technology and training.">
+    <link rel="icon" type="image/x-icon" href="image\logo.png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+    :root {
+        /* Blue Palette */
+        --primary-blue: #3b82f6;
+        /* blue-500 */
+        --secondary-blue: #2563eb;
+        /* blue-600 */
+        --light-blue: #93c5fd;
+        /* blue-300 */
+        --sky-blue: #e0f2fe;
+        /* sky-100 */
+        --navy-blue: #1e293b;
+        /* slate-800 */
+
+        --primary-blue: #1a56db;
+        --dark-blue: #133b9a;
+        --light-blue: #3b82f6;
+        --sky-blue: #93c5fd;
+        --navy-blue: #0f172a;
+        --off-white: #f8fafc;
+        --accent-blue: #2563eb;
+        --teal-blue: #0d9488;
+        --gradient-start: #1e3a8a;
+        --gradient-end: rgb(122, 153, 255);
+        /* Supporting Colors */
+        --off-white: #f8fafc;
+        /* slate-50 */
+        --light-gray: #f1f5f9;
+        /* slate-100 */
+        --medium-gray: #64748b;
+        /* slate-500 */
+        --dark-text: #334155;
+        /* slate-700 */
+        --light-text: #e2e8f0;
+        /* slate-200 */
+        --white: #ffffff;
+        --success: #22c55e;
+        /* green-500 */
+        --info: #0ea5e9;
+        /* sky-500 */
+        --warning: #f59e0b;
+        /* amber-500 */
+        --danger: #ef4444;
+        /* red-500 */
+    }
+
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        color: #334155;
+        overflow-x: hidden;
+        background-color: var(--off-white);
+    }
+
+    /* Navigation */
+    .navbar {
+        background: linear-gradient(135deg, var(--gradient-end) 50%, var(--gradient-start) 50%);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        padding: 18px 0;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .navbar.scrolled {
+        padding: 12px 0;
+        background-color: rgba(15, 23, 42, 0.98) !important;
+        backdrop-filter: blur(12px);
+    }
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .navbar-brand img.logo-img {
+        height: 60px;
+        width: 70px;
+        transition: all 0.3s;
+    }
+
+    .navbar-brand img.logo-text {
+        height: 24px;
+        transition: all 0.3s;
+        margin-left: -15px;
+    }
+
+    .navbar.scrolled .navbar-brand img.logo-img {
+        height: 45px;
+    }
+
+    .navbar.scrolled .navbar-brand img.logo-text {
+        height: 24px;
+    }
+
+    .nav-link {
+        font-weight: 500;
+        color: #e2e8f0 !important;
+        margin: 0 10px;
+        transition: all 0.3s;
+        position: relative;
+        padding: 8px 12px !important;
+    }
+
+    .nav-link:hover {
+        color: var(--sky-blue) !important;
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--sky-blue), var(--teal-blue));
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: width 0.3s, opacity 0.3s;
+        opacity: 0;
+        border-radius: 3px;
+    }
+
+    .nav-link:hover::after {
+        width: 70%;
+        opacity: 1;
+    }
+
+    .nav-link.active {
+        color: var(--sky-blue) !important;
+        font-weight: 600;
+    }
+
+    .nav-link.active::after {
+        width: 70%;
+        opacity: 1;
+    }
+
+    /* --- Hero Section --- */
+    .hero-section {
+        /* Gradient overlay with primary blues */
+        background: linear-gradient(135deg, rgba(10, 41, 92, 0.9), rgba(37, 99, 235, 0.95)),
+            /* var(--primary-blue), var(--primary-blue-dark) with opacity */
+            url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center center/cover no-repeat;
+        background-attachment: fixed;
+        color: white;
+        padding: 120px 0;
+        text-align: center;
+        position: relative;
+        margin-top: 100px;
+    }
+
+    .hero-section h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 30px;
+        opacity: 0.95;
+    }
+
+    /* Breadcrumb Styles */
+    .breadcrumb {
+        background-color: transparent;
+        padding: 0;
+        margin-bottom: 20px;
+        justify-content: center;
+        /* Center breadcrumbs */
+    }
+
+    .breadcrumb-item a {
+        color: var(--light-blue);
+        /* Use light blue for links */
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .breadcrumb-item a:hover {
+        color: white;
+    }
+
+    .breadcrumb-item.active {
+        color: white;
+        opacity: 0.8;
+    }
+
+    .breadcrumb-item+.breadcrumb-item::before {
+        color: rgba(255, 255, 255, 0.6);
+        /* Lighter separator */
+        content: ">";
+        /* Use > instead of default / */
+        padding: 0 0.7rem;
+    }
+
+    /* --- Section Title --- */
+    .section-title {
+        text-align: center;
+        margin: 80px 0 50px;
+        position: relative;
+    }
+
+    .section-title h2 {
+        font-weight: 700;
+        color: var(--dark-color);
+        display: inline-block;
+        padding-bottom: 15px;
+        position: relative;
+        font-size: 2.2rem;
+        /* Slightly larger title */
+    }
+
+    .section-title h2::after {
+        content: '';
+        position: absolute;
+        width: 80px;
+        height: 4px;
+        background-color: var(--primary-blue);
+        /* Accent underline */
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+    }
+
+    .section-title p {
+        color: var(--grey-text);
+        font-size: 1.1rem;
+    }
+
+    /* --- Contact Container --- */
+    .contact-container {
+        background: white;
+        border-radius: 12px;
+        /* Slightly more rounded */
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.07);
+        /* Softer shadow */
+        overflow: hidden;
+        margin-bottom: 80px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-container:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form {
+        padding: 50px;
+    }
+
+    /* --- Contact Info Section --- */
+    .contact-info {
+        /* Gradient using primary blues */
+        background: linear-gradient(135deg, var(--primary-blue), var(--teal-blue));
+        color: white;
+        padding: 50px;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        border-radius: 0 12px 12px 0;
+        /* Match container radius */
+    }
+
+    /* Subtle background decorative elements */
+    .contact-info::before,
+    .contact-info::after {
+        content: '';
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.06);
+        /* Very subtle white circles */
+        border-radius: 50%;
+        z-index: 0;
+    }
+
+    .contact-info::before {
+        top: -60px;
+        right: -60px;
+        width: 220px;
+        height: 220px;
+    }
+
+    .contact-info::after {
+        bottom: -90px;
+        left: -40px;
+        width: 280px;
+        height: 280px;
+    }
+
+
+    /* --- Form Styles --- */
+    .form-label {
+        font-weight: 500;
+        margin-bottom: 8px;
+        color: var(--dark-color);
+    }
+
+    .form-label .text-danger {
+        color: var(--danger-color);
+        margin-left: 2px;
+    }
+
+    .form-control {
+        height: 50px;
+        border-radius: 8px;
+        /* More rounded inputs */
+        border: 1px solid var(--light-grey-border);
+        padding: 10px 15px;
+        margin-bottom: 25px;
+        /* Increased spacing */
+        transition: all 0.3s ease;
+        background-color: #f9fafb;
+        /* Very light input background */
+    }
+
+    .form-control:focus {
+        /* Use primary blue for focus ring */
+        border-color: var(--accent-blue);
+        box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.25);
+        /* var(--primary-blue) with opacity */
+        background-color: white;
+    }
+
+    textarea.form-control {
+        height: auto;
+        min-height: 150px;
+        resize: vertical;
+    }
+
+    select.form-control {
+        /* Appearance for select dropdown */
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%233b82f6' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+        /* Use primary blue for arrow */
+        background-repeat: no-repeat;
+        background-position: right 0.9rem center;
+        background-size: 1em;
+        padding-right: 2.5rem;
+        /* Space for the arrow */
+    }
+
+    .btn-submit {
+        background-color: var(--primary-blue);
+        color: white;
+        border: none;
+        padding: 14px 35px;
+        /* Slightly larger button */
+        border-radius: 8px;
+        font-weight: 600;
+        /* Bolder text */
+        transition: all 0.3s ease;
+        width: 100%;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        font-size: 0.95rem;
+        margin-top: 10px;
+        /* Add space above button */
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+    }
+
+    .btn-submit:hover {
+        background-color: var(--teal-blue);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+    }
+
+    .btn-submit:active {
+        transform: translateY(0);
+        box-shadow: 0 4px 15px rgba(15, 54, 117, 0.2);
+    }
+
+    .btn-submit i {
+        margin-right: 8px;
+        /* Space between icon and text */
+    }
+
+
+    /* --- Contact Info Details --- */
+    .contact-info h3 {
+        font-weight: 600;
+        position: relative;
+        z-index: 1;
+    }
+
+    .contact-info p {
+        position: relative;
+        z-index: 1;
+        opacity: 0.9;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 35px;
+        /* More spacing */
+        position: relative;
+        z-index: 1;
+    }
+
+    .contact-icon {
+        width: 55px;
+        /* Slightly larger icon circle */
+        height: 55px;
+        /* Use a lighter shade of the primary blue for the background */
+        background-color: rgba(255, 255, 255, 0.15);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 25px;
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+        font-size: 1.3rem;
+        /* Larger icon */
+    }
+
+    .contact-item:hover .contact-icon {
+        background-color: rgba(255, 255, 255, 0.25);
+        transform: scale(1.08) rotate(-5deg);
+        /* Subtle hover effect */
+    }
+
+    .contact-details h5 {
+        font-weight: 600;
+        margin-bottom: 8px;
+        font-size: 1.15rem;
+        /* Slightly larger heading */
+        color: white;
+    }
+
+    .contact-details p,
+    .contact-details a {
+        color: #e0f2fe;
+        /* Use sky blue for text/links */
+        margin-bottom: 2px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+    }
+
+    .contact-details a:hover {
+        color: white;
+        /* Brighter hover */
+        text-decoration: underline;
+        text-decoration-color: var(--light-blue);
+    }
+
+    .contact-details small {
+        color: var(--light-blue);
+        /* Light blue for small text */
+        opacity: 0.9;
+    }
+
+
+    /* --- Social Links in Contact Info --- */
+    .contact-info h4 {
+        font-weight: 600;
+        position: relative;
+        z-index: 1;
+    }
+
+    .social-links {
+        display: flex;
+        margin-top: 30px;
+        /* Adjusted spacing */
+        position: relative;
+        z-index: 1;
+    }
+
+    .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        /* Larger links */
+        height: 45px;
+        background-color: rgba(255, 255, 255, 0.15);
+        color: white;
+        border-radius: 50%;
+        margin-right: 15px;
+        transition: all 0.3s ease;
+        font-size: 1.1rem;
+    }
+
+    .social-links a:hover {
+        /* Hover uses light blue background */
+        background-color: var(--light-blue);
+        color: var(--primary-blue-dark);
+        /* Darker icon color on hover */
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* --- Map & Business Hours --- */
+    .map-container {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.07);
+        margin-bottom: 80px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .map-container:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.1);
+    }
+
+    .map-container iframe {
+        width: 100%;
+        height: 400px;
+        /* Adjusted height */
+        border: none;
+        filter: grayscale(30%) contrast(1.1);
+        /* Subtle map styling */
+    }
+
+    .business-hours {
+        background-color: white;
+        border-radius: 12px;
+        padding: 40px;
+        /* More padding */
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.07);
+        margin-bottom: 30px;
+        height: 100%;
+        /* Make height consistent with map container */
+    }
+
+    .business-hours h4 {
+        color: var(--dark-color);
+        font-weight: 600;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid var(--sky-blue);
+        /* Use sky blue for border */
+        font-size: 1.4rem;
+    }
+
+    .hours-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 0;
+        border-bottom: 1px solid #f1f5f9;
+        /* Lighter separator */
+    }
+
+    .hours-item:last-child {
+        border-bottom: none;
+    }
+
+    .day {
+        font-weight: 500;
+        color: var(--dark-color);
+    }
+
+    .time {
+        color: var(--primary-blue);
+        /* Use primary blue for time */
+        font-weight: 500;
+    }
+
+    /* --- FAQ Section --- */
+    .faq-section {
+        margin-bottom: 80px;
+    }
+
+    .faq-item {
+        margin-bottom: 15px;
+        border-radius: 10px;
+        /* Slightly more rounded */
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--light-grey-border);
+        /* Subtle border */
+        transition: box-shadow 0.3s ease;
+    }
+
+    .faq-item:hover {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .faq-header {
+        background-color: white;
+        padding: 20px 30px;
+        /* More padding */
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        border: none;
+        /* Remove default accordion button border */
+        width: 100%;
+        text-align: left;
+    }
+
+    .faq-header:hover {
+        background-color: var(--sky-blue);
+        /* Use sky blue for hover background */
+    }
+
+    .faq-header h5 {
+        margin-bottom: 0;
+        font-weight: 600;
+        /* Bolder question */
+        font-size: 1.1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--dark-color);
+    }
+
+    .faq-header h5 i {
+        transition: transform 0.3s ease;
+        color: var(--primary-blue);
+        /* Icon color */
+        font-size: 1rem;
+    }
+
+    .faq-header[aria-expanded="true"] h5 i {
+        transform: rotate(180deg);
+    }
+
+    .faq-header[aria-expanded="true"] {
+        background-color: var(--sky-blue);
+    }
+
+    .faq-body {
+        padding: 25px 30px;
+        background-color: #fdfdfe;
+        /* Very light background for answer */
+        border-top: 1px solid var(--light-grey-border);
+        color: var(--grey-text);
+        font-size: 0.95rem;
+    }
+
+    .faq-body p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Bootstrap accordion overrides */
+    .accordion-button:focus {
+        box-shadow: none;
+        border-color: rgba(0, 0, 0, .125);
+    }
+
+    .accordion-button:not(.collapsed) {
+        color: var(--dark-color);
+        background-color: var(--sky-blue);
+        box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .125);
+    }
+
+    .accordion-button::after {
+        /* Hide default Bootstrap arrow */
+        display: none;
+    }
+
+    .accordion-item {
+        border: none;
+        /* Remove default item border */
+    }
+
+    .accordion {
+        --bs-accordion-border-width: 0;
+        /* Remove default accordion border */
+    }
+
+    /* --- Success Message --- */
+    .success-message {
+        display: none;
+        /* Hidden by default */
+        background-color: var(--success-color);
+        color: white;
+        padding: 18px 25px;
+        /* More padding */
+        border-radius: 8px;
+        margin-bottom: 25px;
+        text-align: center;
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+    .success-message i {
+        margin-right: 10px;
+        font-size: 1.2rem;
+        vertical-align: middle;
+    }
+
+    /* Footer */
+    .footer {
+        background-color: var(--navy-blue);
+        color: white;
+        padding: 100px 0 30px;
+        position: relative;
+    }
+
+    .footer::before {
+        content: '';
+        /* position: absolute; */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 150px;
+        background: linear-gradient(to bottom, rgba(15, 23, 42, 0), var(--navy-blue));
+    }
+
+    .footer-logo {
+        height: 70px;
+        margin-bottom: 25px;
+    }
+
+    .footer-about p {
+        color: #cbd5e1;
+        line-height: 1.8;
+        margin-bottom: 25px;
+    }
+
+    .footer-links h5 {
+        font-weight: 700;
+        margin-bottom: 25px;
+        position: relative;
+        padding-bottom: 12px;
+        font-size: 1.3rem;
+    }
+
+    .footer-links h5::after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary-blue), var(--teal-blue));
+        bottom: 0;
+        left: 0;
+        border-radius: 3px;
+    }
+
+    .footer-links ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links li {
+        margin-bottom: 12px;
+        transition: all 0.3s;
+    }
+
+    .footer-links li:hover {
+        transform: translateX(5px);
+    }
+
+    .footer-links a {
+        color: #cbd5e1;
+        text-decoration: none;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+    }
+
+    .footer-links a:hover {
+        color: var(--sky-blue);
+    }
+
+    .footer-links a i {
+        margin-right: 10px;
+        color: var(--sky-blue);
+        font-size: 0.8rem;
+    }
+
+    .social-icons {
+        margin-top: 25px;
+    }
+
+    .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 42px;
+        margin-right: 12px;
+        transition: all 0.3s;
+    }
+
+    .social-icons a:hover {
+        background: linear-gradient(135deg, var(--primary-blue), var(--teal-blue));
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+    }
+
+    .newsletter-form .form-control {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: none;
+        color: white;
+        height: 50px;
+        border-radius: 8px;
+        padding: 10px 15px;
+        margin-bottom: 15px;
+    }
+
+    .newsletter-form .form-control::placeholder {
+        color: #cbd5e1;
+        opacity: 0.8;
+    }
+
+    .newsletter-form .btn {
+        background: linear-gradient(90deg, var(--primary-blue), var(--teal-blue));
+        color: white;
+        border: none;
+        height: 50px;
+        border-radius: 8px;
+        font-weight: 600;
+        width: 100%;
+        transition: all 0.3s;
+    }
+
+    .newsletter-form .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+    }
+
+    .copyright {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 25px;
+        margin-top: 50px;
+        text-align: center;
+        color: #94a3b8;
+        font-size: 0.95rem;
+    }
+
+    .copyright a {
+        color: var(--accent-blue);
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+
+    .copyright a:hover {
+        color: white;
+    }
+
+    /* Animations */
+    .animate-up {
+        animation: fadeInUp 1s both;
+    }
+
+    .animate-delay-1 {
+        animation-delay: 0.2s;
+    }
+
+    .animate-delay-2 {
+        animation-delay: 0.4s;
+    }
+
+    .animate-delay-3 {
+        animation-delay: 0.6s;
+    }
+
+    /* --- Responsive Styles --- */
+    @media (max-width: 992px) {
+        .hero-section {
+            padding: 100px 0;
+            background-attachment: scroll;
+            /* Fixed attachment can be laggy */
+        }
+
+        .hero-section h1 {
+            font-size: 2.8rem;
+        }
+
+        .contact-form,
+        .contact-info {
+            padding: 40px;
+        }
+
+        .contact-info {
+            border-radius: 0 0 12px 12px;
+        }
+
+        /* Adjust radius on stack */
+        .map-container iframe {
+            height: 350px;
+        }
+
+        .business-hours {
+            height: auto;
+        }
+
+        /* Allow height to adjust */
+    }
+
+    @media (max-width: 768px) {
+        .hero-section {
+            padding: 80px 0;
+        }
+
+        .hero-section h1 {
+            font-size: 2.4rem;
+        }
+
+        .hero-section p {
+            font-size: 1.1rem;
+        }
+
+        .section-title {
+            margin: 60px 0 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+        }
+
+        .contact-form,
+        .contact-info {
+            padding: 35px;
+        }
+
+        .contact-container,
+        .map-container,
+        .faq-section {
+            margin-bottom: 60px;
+        }
+
+        .footer {
+            padding: 60px 0 20px;
+        }
+
+        .footer-links h5 {
+            margin-bottom: 20px;
+        }
+
+        .copyright {
+            margin-top: 40px;
+            padding-top: 25px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .hero-section {
+            padding: 70px 0;
+        }
+
+        .hero-section h1 {
+            font-size: 2.1rem;
+        }
+
+        .contact-form,
+        .contact-info {
+            padding: 30px;
+        }
+
+        .contact-item {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            margin-bottom: 15px;
+            margin-right: 0;
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+        }
+
+        .contact-details h5 {
+            font-size: 1.1rem;
+        }
+
+        .btn-submit {
+            padding: 12px 25px;
+            font-size: 0.9rem;
+        }
+
+        .faq-header {
+            padding: 18px 20px;
+        }
+
+        .faq-header h5 {
+            font-size: 1rem;
+        }
+
+        .faq-body {
+            padding: 20px 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            font-size: 1rem;
+            margin-right: 10px;
+        }
+
+        .social-icons a {
+            width: 38px;
+            height: 38px;
+            font-size: 1rem;
+            margin-right: 8px;
+        }
+
+        .footer-links ul {
+            margin-bottom: 30px;
+        }
+
+        /* Add space between link columns on mobile */
+        .footer .text-light {
+            margin-bottom: 20px;
+        }
+    }
+    </style>
+</head>
+
+<body>
+
+     <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="image/logo2.png" alt="Logic Minds Logo" class="logo-img">
+                <img src="image/name.png" alt="Logic Minds" class="logo-text">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="course.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="login.php">Login</a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-content animated">
+            <h1>Connect With Our Team</h1>
+            <p class="lead">We're here to help you with any questions about our courses, enrollment process, or platform
+                features. Reach out to our dedicated support team.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container py-5">
+        <div class="section-title animated">
+            <h2>Get In Touch</h2>
+            <p>Have questions? We're just a message or a call away.</p>
+        </div>
+
+        <div class="row contact-container animated delay-1">
+            <div class="col-lg-7 contact-form">
+                <h3 class="mb-4 font-weight-bold" style="color: var(--dark-color);">Send Us a Message</h3>
+                <div id="successMessage" class="success-message">
+                    <i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully. We'll get
+                    back to you shortly.
+                </div>
+
+                <form id="contactForm" action="#" method="POST" novalidate>
+                    <!-- Added novalidate to rely on JS/backend validation -->
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <!-- Adjusted spacing -->
+                            <label for="name" class="form-label">Full Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="name" name="name" required
+                                placeholder="e.g., John Doe">
+                            <!-- Optional: Add validation feedback -->
+                            <!-- <div class="invalid-feedback">Please enter your full name.</div> -->
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">Email Address <span
+                                    class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="email" name="email" required
+                                placeholder="e.g., john.doe@example.com">
+                            <!-- <div class="invalid-feedback">Please enter a valid email address.</div> -->
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone Number (Optional)</label>
+                        <input type="tel" class="form-control" id="phone" name="phone"
+                            placeholder="e.g., +91 98765 43210">
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Subject <span class="text-danger">*</span></label>
+                        <select class="form-select form-control" id="subject" name="subject" required>
+                            <!-- Added form-select -->
+                            <option value="" disabled selected>Select a subject...</option>
+                            <option value="Course Inquiry">Course Inquiry</option>
+                            <option value="Enrollment Process">Enrollment Process</option>
+                            <option value="Technical Support">Technical Support</option>
+                            <option value="Billing Question">Billing Question</option>
+                            <!-- <option value="Partnership Opportunity">Partnership Opportunity</option> -->
+                            <option value="Feedback">Feedback</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <!-- <div class="invalid-feedback">Please select a subject.</div> -->
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Your Message <span class="text-danger">*</span></label>
+                        <textarea class="form-control" id="message" name="message" rows="6" required
+                            placeholder="Please describe your query in detail..."></textarea>
+                        <!-- <div class="invalid-feedback">Please enter your message.</div> -->
+                    </div>
+                    <button type="submit" class="btn btn-submit mt-3">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+            <div class="col-lg-5 contact-info">
+                <h3 class="mb-4">Contact Information</h3>
+                <p class="mb-5">Our team is available to assist you during business hours. Find the best way to reach us
+                    below.</p>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h5>Our Headquarters</h5>
+                        <p>Shop No:- 113 First Floor, Cannal Road<br>Vesu, Surat 395-007</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h5>Email Us</h5>
+                        <p><a href="mailto:logicmindsbyparii@gmail.com" target="_blank">logicmindsbyparii@gmail.com</a> (General)</p>
+                        <!-- <p><a href="mailto:support@eduka.com">support@eduka.com</a> (Support)</p> -->
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h5>Call Us</h5>
+                        <p><a href="tel:+91 7802846884">+91 78028 46884</a></p>
+                        <small style="color:black;">(Available 10AM - 6PM IST, Mon-Fri)</small>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h5>WhatsApp Chat</h5>
+                        <p><a href="https://wa.me/7802846884" target="_blank" rel="noopener noreferrer">+91 78028 46884</a></p>
+                        <small style="color:black;">(Quick Queries)</small>
+                    </div>
+                </div>
+
+                <h4 class="mt-5 mb-3">Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <!-- <a href="#" aria-label="Twitter" target="_blank" rel="noopener noreferrer"><i
+                            class="fab fa-twitter"></i></a> -->
+                    <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <!-- <a href="#" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><i
+                            class="fab fa-youtube"></i></a> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5 pt-4 animated delay-2 align-items-stretch">
+            <!-- Added align-items-stretch -->
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <!-- Added spacing control -->
+                <div class="business-hours h-100">
+                    <!-- Added h-100 -->
+                    <h4><i class="far fa-clock me-2"></i>Business Hours (IST)</h4>
+                    <div class="hours-item">
+                        <span class="day">Monday - Friday</span>
+                        <span class="time">9:00 AM - 6:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="day">Saturday</span>
+                        <span class="time">10:00 AM - 4:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="day">Sunday & Public Holidays</span>
+                        <span class="time text-secondary">Closed</span> <!-- Different color for closed -->
+                    </div>
+                    <p class="mt-4 text-muted small">Response times outside these hours may be delayed.</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="map-container h-100">
+                    <!-- Added h-100 -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.057869365409!2d72.78598067526005!3d21.15009518052966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04df6397aee57%3A0x7833089bc90d6a32!2sMoney%20Arcade!5e0!3m2!1sen!2sin!4v1747049572733!5m2!1sen!2sin"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section animated delay-3">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to common questions about contacting us.</p>
+            </div>
+
+            <div class="accordion" id="faqAccordion">
+                <!-- FAQ Item 1 -->
+                <div class="accordion-item faq-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button faq-header" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <h5>
+                                How long does it take to get a response?
+                                <i class="fas fa-chevron-down"></i>
+                            </h5>
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body faq-body">
+                            Our dedicated support team aims to respond to all email and form inquiries within <strong>1
+                                business day</strong> (usually much faster!). For urgent matters during business hours,
+                            we recommend calling our support line for the quickest assistance. WhatsApp queries are
+                            typically answered within a few hours during business hours.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="accordion-item faq-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed faq-header" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <h5>
+                                What information should I include in my message?
+                                <i class="fas fa-chevron-down"></i>
+                            </h5>
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body faq-body">
+                            To help us assist you efficiently, please include:
+                            <ul>
+                                <li>Your full name and the email address associated with your Logic Minds account (if
+                                    applicable).</li>
+                                <li>A clear description of your question or issue.</li>
+                                <li>The name of the course you're inquiring about (if relevant).</li>
+                                <li>For technical issues, please mention the device (e.g., Laptop, Mobile), operating
+                                    system (e.g., Windows, iOS), and browser (e.g., Chrome, Safari) you are using.</li>
+                                <li>Any relevant screenshots (if possible via email).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="accordion-item faq-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed faq-header" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <h5>
+                                Do you offer technical support via phone?
+                                <i class="fas fa-chevron-down"></i>
+                            </h5>
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body faq-body">
+                            Yes, we offer phone support for urgent technical issues during our business hours. However,
+                            for many technical problems, submitting a detailed message via email or the contact form
+                            allows our technical team to investigate thoroughly and provide a more comprehensive
+                            solution. We may ask for screenshots or specific details that are easier to share via email.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="accordion-item faq-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed faq-header" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <h5>
+                                Can I visit your office in person?
+                                <i class="fas fa-chevron-down"></i>
+                            </h5>
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body faq-body">
+                            Logic Minds operates primarily as an online education platform. While our headquarters address is
+                            listed, visits are generally by <strong>appointment only</strong>. If you have a specific
+                            reason to meet in person (e.g., for a partnership discussion), please contact us first via
+                            email or phone to schedule an appointment with the relevant department.
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End Accordion -->
+        </div> <!-- End FAQ Section -->
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="footer-about">
+                        <img src="image\logo2.png" alt="Logic Minds Logo" class="footer-logo">
+                        <p>Logic Minds is a premier online learning platform committed to providing high-quality,
+                            accessible education to help individuals achieve their professional goals.</p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/logicmindsbyparii" target="_blank"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
+                            <a href="https://www.instagram.com/logic_minds_by_parii/" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/logicmindsbyparii/" target="_blank"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                            <!-- <a href="#"><i class="fab fa-youtube"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="index.php"><i class="fas fa-chevron-right"></i> Home</a></li>
+                            <li><a href="course.php"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                            <li><a href="about.php"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                            <li><a href="contact.php"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                            <!-- <li><a href="login.php"><i class="fas fa-chevron-right"></i> Login</a></li> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Categories</h5>
+                        <ul>
+                            <li><a href="course.php"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+                            <li><a href="course.php"><i class="fas fa-chevron-right"></i> Data Science</a></li>
+                            <li><a href="course.php"><i class="fas fa-chevron-right"></i> Cloud Computing</a></li>
+                            <li><a href="course.php"><i class="fas fa-chevron-right"></i> Cybersecurity</a></li>
+                            <li><a href="course.php"><i class="fas fa-chevron-right"></i> Mobile Development</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="footer-links">
+                        <h5>Newsletter</h5>
+                        <p>Subscribe to our newsletter for the latest course updates, offers, and learning resources.
+                        </p>
+                        <form class="mt-4 newsletter-form">
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Your Email Address">
+                            </div>
+                            <button class="btn" type="button">Subscribe Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© <script>
+                    document.write(new Date().getFullYear())
+                    </script> Logic Minds. All Rights Reserved.</p>
+                <p>Designed & Powered by <a href="https://www.instagram.com/logic_minds_by_parii/" target="_blank"
+                        rel="noopener noreferrer"><b>Logic Minds by Parii</b></a></p>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+    // --- Navbar Scroll Effect ---
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // --- Form Submission Handling ---
+    const contactForm = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            // Basic frontend validation example (can be expanded)
+            let isValid = true;
+            contactForm.querySelectorAll('[required]').forEach(input => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    // Add error indication (optional)
+                    input.classList.add('is-invalid');
+                } else {
+                    input.classList.remove('is-invalid');
+                }
+            });
+
+            // Specific check for email format
+            const emailInput = contactForm.querySelector('#email');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (emailInput && !emailRegex.test(emailInput.value)) {
+                isValid = false;
+                emailInput.classList.add('is-invalid');
+            }
+
+            if (isValid) {
+                // Simulate form submission (replace with actual AJAX call)
+                console.log('Form data:', new FormData(contactForm));
+
+                // Show success message
+                successMessage.style.display = 'block';
+                successMessage.style.opacity = 1; // Make sure opacity is reset if faded out
+
+                // Scroll to success message for visibility
+                successMessage.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+
+                // Reset the form
+                contactForm.reset();
+                contactForm.querySelectorAll('.is-invalid').forEach(input => input.classList.remove(
+                    'is-invalid'));
+
+
+                // Optional: Hide success message after a delay
+                setTimeout(() => {
+                    // Fade out effect
+                    let opacity = 1;
+                    const fadeInterval = setInterval(() => {
+                        if (opacity <= 0) {
+                            clearInterval(fadeInterval);
+                            successMessage.style.display = 'none';
+                        }
+                        successMessage.style.opacity = opacity;
+                        opacity -= 0.1;
+                    }, 50);
+                }, 8000); // Hide after 8 seconds
+
+            } else {
+                console.log('Form validation failed');
+                // Optionally scroll to the first invalid field
+                const firstInvalid = contactForm.querySelector('.is-invalid');
+                if (firstInvalid) {
+                    firstInvalid.focus();
+                    firstInvalid.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }
+            }
+        });
+    }
+
+    // --- Animation Observer ---
+    // Re-using the Intersection Observer for animations
+    document.addEventListener('DOMContentLoaded', function() {
+        const animatedElements = document.querySelectorAll('.animated, .delay-1, .delay-2, .delay-3');
+
+        if ("IntersectionObserver" in window) {
+            const observer = new IntersectionObserver((entries, observerInstance) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Use requestAnimationFrame for smoother start
+                        requestAnimationFrame(() => {
+                            entry.target.style.animationPlayState = 'running';
+                        });
+                        // Stop observing once animated
+                        observerInstance.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            }); // Trigger when 10% visible
+
+            animatedElements.forEach(element => {
+                // Initially pause the animation
+                element.style.animationPlayState = 'paused';
+                observer.observe(element);
+            });
+        } else {
+            // Fallback for older browsers: just run animations immediately
+            animatedElements.forEach(element => {
+                element.style.animationPlayState = 'running';
+            });
+        }
+    });
+
+    // --- Accordion Icon Toggle ---
+    // Ensure correct icon rotation with Bootstrap events
+    const faqAccordion = document.getElementById('faqAccordion');
+    if (faqAccordion) {
+        faqAccordion.addEventListener('show.bs.collapse', event => {
+            const button = event.target.previousElementSibling.querySelector('.accordion-button');
+            if (button) {
+                // Find the icon within the button's h5 tag
+                const icon = button.querySelector('h5 i.fas');
+                if (icon) {
+                    // Rotation is handled by CSS [aria-expanded="true"] selector now
+                }
+            }
+        });
+        faqAccordion.addEventListener('hide.bs.collapse', event => {
+            const button = event.target.previousElementSibling.querySelector('.accordion-button');
+            if (button) {
+                // Find the icon within the button's h5 tag
+                const icon = button.querySelector('h5 i.fas');
+                if (icon) {
+                    // Rotation is handled by CSS
+                }
+            }
+        });
+    }
+    </script>
+
+</body>
+
+</html>

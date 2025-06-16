@@ -1,0 +1,2660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic Minds - Premium Online Learning Platform</title>
+     <meta name="description" content="Leading IT company offering end-to-end solutions including web & app development, custom software projects, and industry-focused IT courses. 
+        Empowering businesses and learners with cutting-edge technology and training.">
+    <link rel="icon" type="image/x-icon" href="image\logo.png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+    :root {
+        /* Blue Palette */
+        --primary-blue: #3b82f6;
+        /* blue-500 */
+        --secondary-blue: #2563eb;
+        /* blue-600 */
+        --light-blue: #93c5fd;
+        /* blue-300 */
+        --sky-blue: #e0f2fe;
+        /* sky-100 */
+        --navy-blue: #1e293b;
+        /* slate-800 */
+
+        --primary-blue: #1a56db;
+        --dark-blue: #133b9a;
+        --light-blue: #3b82f6;
+        --sky-blue: #93c5fd;
+        --navy-blue: #0f172a;
+        --off-white: #f8fafc;
+        --accent-blue: #2563eb;
+        --teal-blue: #0d9488;
+        --gradient-start: #1e3a8a;
+        --gradient-end: rgb(122, 153, 255);
+        /* Supporting Colors */
+        --off-white: #f8fafc;
+        /* slate-50 */
+        --light-gray: #f1f5f9;
+        /* slate-100 */
+        --medium-gray: #64748b;
+        /* slate-500 */
+        --dark-text: #334155;
+        /* slate-700 */
+        --light-text: #e2e8f0;
+        /* slate-200 */
+        --white: #ffffff;
+        --success: #22c55e;
+        /* green-500 */
+        --info: #0ea5e9;
+        /* sky-500 */
+        --warning: #f59e0b;
+        /* amber-500 */
+        --danger: #ef4444;
+        /* red-500 */
+    }
+
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        color: #334155;
+        overflow-x: hidden;
+        background-color: var(--off-white);
+    }
+
+    /* Navigation */
+    .navbar {
+        background: linear-gradient(135deg, var(--gradient-end) 50%, var(--gradient-start) 50%);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        padding: 18px 0;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .navbar.scrolled {
+        padding: 12px 0;
+        background-color: rgba(15, 23, 42, 0.98) !important;
+        backdrop-filter: blur(12px);
+    }
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .navbar-brand img.logo-img {
+        height: 60px;
+        width: 70px;
+        transition: all 0.3s;
+    }
+
+    .navbar-brand img.logo-text {
+        height: 24px;
+        transition: all 0.3s;
+        margin-left: -15px;
+    }
+
+    .navbar.scrolled .navbar-brand img.logo-img {
+        height: 45px;
+    }
+
+    .navbar.scrolled .navbar-brand img.logo-text {
+        height: 24px;
+    }
+
+    .nav-link {
+        font-weight: 500;
+        color: #e2e8f0 !important;
+        margin: 0 10px;
+        transition: all 0.3s;
+        position: relative;
+        padding: 8px 12px !important;
+    }
+
+    .nav-link:hover {
+        color: var(--sky-blue) !important;
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--sky-blue), var(--teal-blue));
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: width 0.3s, opacity 0.3s;
+        opacity: 0;
+        border-radius: 3px;
+    }
+
+    .nav-link:hover::after {
+        width: 70%;
+        opacity: 1;
+    }
+
+    .nav-link.active {
+        color: var(--sky-blue) !important;
+        font-weight: 600;
+    }
+
+    .nav-link.active::after {
+        width: 70%;
+        opacity: 1;
+    }
+
+
+    /* Hero Section */
+    .hero-section {
+        background-image: linear-gradient(rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.7)), url('image/course.png');
+        background-size: cover;
+        background-position: center;
+        color: var(--white);
+        padding: 100px 0;
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    .hero-section h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 30px;
+        color: var(--light-text);
+    }
+
+    .hero-section .btn-primary {
+        background-color: var(--primary-blue);
+        border-color: var(--primary-blue);
+        transition: all 0.3s ease;
+    }
+
+    .hero-section .btn-primary:hover {
+        background-color: var(--secondary-blue);
+        border-color: var(--secondary-blue);
+        transform: translateY(-2px);
+    }
+
+    .hero-section .btn-outline-light {
+        color: var(--white);
+        border-color: var(--white);
+        transition: all 0.3s ease;
+    }
+
+    .hero-section .btn-outline-light:hover {
+        background-color: rgb(255, 255, 255);
+        color: black;
+        transform: translateY(-2px);
+    }
+
+    /* Section Title */
+    .section-title {
+        text-align: center;
+        margin: 60px 0 40px;
+        position: relative;
+    }
+
+    .section-title h2 {
+        font-weight: 700;
+        color: var(--navy-blue);
+        /* Darker title */
+        display: inline-block;
+        padding-bottom: 10px;
+        margin-bottom: 0;
+    }
+
+    .section-title h2::after {
+        content: '';
+        position: absolute;
+        width: 80px;
+        height: 3px;
+        background-color: var(--primary-blue);
+        /* Accent color */
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+    }
+
+    /* Course Card */
+    .course-card {
+        background: var(--white);
+        border-radius: 12px;
+        /* Slightly more rounded */
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(30, 41, 59, 0.08);
+        /* Subtle shadow */
+        transition: all 0.3s ease;
+        margin-bottom: 30px;
+        border: 1px solid var(--light-gray);
+        /* Light border */
+    }
+
+    .course-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(30, 41, 59, 0.12);
+    }
+
+    .course-img {
+        height: 180px;
+        overflow: hidden;
+    }
+
+    .course-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .course-card:hover .course-img img {
+        transform: scale(1.05);
+    }
+
+    .course-body {
+        padding: 25px;
+        /* More padding */
+    }
+
+    .course-title {
+        font-weight: 600;
+        color: var(--navy-blue);
+        margin-bottom: 10px;
+        font-size: 1.15rem;
+    }
+
+    .course-desc {
+        color: var(--medium-gray);
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+        min-height: 55px;
+        /* Ensure consistent height */
+    }
+
+    .course-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+        border-top: 1px solid var(--light-gray);
+        padding-top: 15px;
+    }
+
+    .course-price {
+        font-weight: 700;
+        color: var(--primary-blue);
+        /* Use primary blue */
+        font-size: 1.2rem;
+    }
+
+    .course-duration {
+        color: var(--medium-gray);
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .course-duration i {
+        margin-right: 5px;
+        color: var(--primary-blue);
+        /* Icon color */
+    }
+
+    .btn-enroll {
+        background-color: var(--primary-blue);
+        color: var(--white);
+        border: none;
+        padding: 10px 20px;
+        /* Larger padding */
+        border-radius: 6px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        width: 100%;
+        margin-top: 20px;
+        /* Space above button */
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+    }
+
+    .btn-enroll:hover {
+        background-color: var(--secondary-blue);
+        color: var(--white);
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        transform: translateY(-2px);
+    }
+
+    .badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        z-index: 2;
+        padding: 6px 12px;
+        font-weight: 600;
+        font-size: 0.75rem;
+        border-radius: 4px;
+        text-transform: uppercase;
+    }
+
+    /* Badge colors */
+    .badge.bg-success {
+        background-color: var(--success) !important;
+    }
+
+    .badge.bg-info {
+        background-color: var(--info) !important;
+        color: var(--white) !important;
+    }
+
+    .badge.bg-warning {
+        background-color: var(--warning) !important;
+        color: var(--navy-blue) !important;
+    }
+
+    .badge.bg-danger {
+        background-color: var(--danger) !important;
+    }
+
+    /* Popular Courses Section */
+    #popular {
+        background-color: var(--sky-blue);
+        /* Very light blue background */
+    }
+
+    #popular .card {
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+
+    #popular .card:hover {
+        box-shadow: 0 8px 25px rgba(30, 41, 59, 0.1);
+        transform: translateY(-5px);
+    }
+
+    #popular .card-title {
+        color: var(--navy-blue);
+    }
+
+    #popular .card-text {
+        color: var(--medium-gray);
+        font-size: 0.9rem;
+    }
+
+    #popular .text-primary {
+        color: var(--primary-blue) !important;
+    }
+
+    #popular .btn-outline-primary {
+        color: var(--primary-blue);
+        border-color: var(--primary-blue);
+        transition: all 0.3s ease;
+    }
+
+    #popular .btn-outline-primary:hover {
+        background-color: var(--primary-blue);
+        color: var(--white);
+    }
+
+    #popular .card-footer small {
+        color: var(--medium-gray);
+    }
+
+    #popular .card-footer i {
+        color: var(--primary-blue);
+        margin-right: 4px;
+    }
+
+    #popular .position-absolute {
+        top: 10px !important;
+        /* Adjusted from top-10 */
+        left: 10px !important;
+        /* Adjusted from start-10 */
+    }
+
+
+    /* Why Choose Us Section */
+    .why-choose-us-icon-bg {
+        background-color: rgba(59, 130, 246, 0.1);
+        /* primary-blue with opacity */
+        color: var(--primary-blue);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        /* Prevent shrinking */
+    }
+
+    .why-choose-us h5 {
+        color: var(--navy-blue);
+        font-weight: 600;
+    }
+
+    .why-choose-us p {
+        color: var(--medium-gray);
+    }
+
+
+    /* Testimonials Section */
+    #testimonials {
+        background-color: var(--sky-blue);
+        /* Match popular courses background */
+    }
+
+    #testimonials .card {
+        border-radius: 10px;
+    }
+
+    #testimonials .card-text {
+        color: var(--medium-gray);
+        font-style: italic;
+        margin-bottom: 25px !important;
+    }
+
+    #testimonials h6 {
+        color: var(--navy-blue);
+    }
+
+    #testimonials small {
+        color: var(--medium-gray);
+    }
+
+    #testimonials .text-warning i {
+        color: var(--warning);
+        /* Keep stars yellow/gold */
+    }
+
+    /* Footer */
+    .footer {
+        background-color: var(--navy-blue);
+        color: white;
+        padding: 100px 0 30px;
+        position: relative;
+    }
+
+    .footer::before {
+        content: '';
+        /* position: absolute; */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 150px;
+        background: linear-gradient(to bottom, rgba(15, 23, 42, 0), var(--navy-blue));
+    }
+
+    .footer-logo {
+        height: 70px;
+        margin-bottom: 25px;
+    }
+
+    .footer-about p {
+        color: #cbd5e1;
+        line-height: 1.8;
+        margin-bottom: 25px;
+    }
+
+    .footer-links h5 {
+        font-weight: 700;
+        margin-bottom: 25px;
+        position: relative;
+        padding-bottom: 12px;
+        font-size: 1.3rem;
+    }
+
+    .footer-links h5::after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary-blue), var(--teal-blue));
+        bottom: 0;
+        left: 0;
+        border-radius: 3px;
+    }
+
+    .footer-links ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links li {
+        margin-bottom: 12px;
+        transition: all 0.3s;
+    }
+
+    .footer-links li:hover {
+        transform: translateX(5px);
+    }
+
+    .footer-links a {
+        color: #cbd5e1;
+        text-decoration: none;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+    }
+
+    .footer-links a:hover {
+        color: var(--sky-blue);
+    }
+
+    .footer-links a i {
+        margin-right: 10px;
+        color: var(--sky-blue);
+        font-size: 0.8rem;
+    }
+
+    .social-icons {
+        margin-top: 25px;
+    }
+
+    .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 42px;
+        margin-right: 12px;
+        transition: all 0.3s;
+    }
+
+    .social-icons a:hover {
+        background: linear-gradient(135deg, var(--primary-blue), var(--teal-blue));
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+    }
+
+    .newsletter-form .form-control {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: none;
+        color: white;
+        height: 50px;
+        border-radius: 8px;
+        padding: 10px 15px;
+        margin-bottom: 15px;
+    }
+
+    .newsletter-form .form-control::placeholder {
+        color: #cbd5e1;
+        opacity: 0.8;
+    }
+
+    .newsletter-form .btn {
+        background: linear-gradient(90deg, var(--primary-blue), var(--teal-blue));
+        color: white;
+        border: none;
+        height: 50px;
+        border-radius: 8px;
+        font-weight: 600;
+        width: 100%;
+        transition: all 0.3s;
+    }
+
+    .newsletter-form .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+    }
+
+    .copyright {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 25px;
+        margin-top: 50px;
+        text-align: center;
+        color: #94a3b8;
+        font-size: 0.95rem;
+    }
+
+    .copyright a {
+        color: var(--accent-blue);
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+
+    .copyright a:hover {
+        color: white;
+    }
+
+    /* Animations */
+    .animate-up {
+        animation: fadeInUp 1s both;
+    }
+
+    .animate-delay-1 {
+        animation-delay: 0.2s;
+    }
+
+    .animate-delay-2 {
+        animation-delay: 0.4s;
+    }
+
+    .animate-delay-3 {
+        animation-delay: 0.6s;
+    }
+
+    /* Floating Elements */
+    .floating-element {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.1;
+        z-index: 0;
+    }
+
+
+    /* Modal Styles */
+    .modal-content {
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .modal-header {
+        border-bottom: 1px solid var(--light-gray);
+        padding: 1.5rem;
+        /* More padding */
+    }
+
+    .modal-title {
+        font-weight: 600;
+        color: var(--navy-blue);
+        /* Dark title */
+    }
+
+    .modal-body {
+        padding: 1.5rem;
+    }
+
+    .modal-footer {
+        border-top: 1px solid var(--light-gray);
+        padding: 1rem 1.5rem;
+        background-color: var(--off-white);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .course-details-img {
+        height: 250px;
+        /* Larger image */
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 25px;
+        width: 100%;
+    }
+
+    .course-features {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .course-features li {
+        margin-bottom: 12px;
+        display: flex;
+        align-items: flex-start;
+        /* Align icon top */
+        color: var(--dark-text);
+        font-size: 0.95rem;
+    }
+
+    .course-features i {
+        color: var(--primary-blue);
+        /* Blue check icon */
+        margin-right: 12px;
+        width: 20px;
+        padding-top: 3px;
+        /* Align icon better with text */
+        flex-shrink: 0;
+    }
+
+    .modal .bg-light {
+        background-color: var(--sky-blue) !important;
+        /* Light blue bg */
+        padding: 20px !important;
+    }
+
+    .modal h6 {
+        color: var(--navy-blue);
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .modal .text-primary {
+        color: var(--primary-blue) !important;
+    }
+
+    .modal .btn-primary {
+        background-color: var(--primary-blue);
+        border-color: var(--primary-blue);
+        transition: all 0.3s ease;
+    }
+
+    .modal .btn-primary:hover {
+        background-color: var(--secondary-blue);
+        border-color: var(--secondary-blue);
+        transform: translateY(-2px);
+    }
+
+
+    /* Responsive Adjustments */
+    @media (max-width: 991px) {
+        .navbar-nav {
+            margin-top: 15px;
+            /* background-color: var(--navy-blue); */
+            border-radius: 8px;
+            padding: 10px 0;
+        }
+
+        .nav-link {
+            margin: 5px 15px;
+        }
+
+        .nav-link::after {
+            left: 15px;
+            transform: none;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 30px;
+            /* Shorter underline on mobile */
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-section h1 {
+            font-size: 2.8rem;
+            /* Smaller heading */
+        }
+
+        .hero-section p {
+            font-size: 1.1rem;
+        }
+
+        .why-choose-us img {
+            margin-bottom: 30px;
+        }
+
+        #popular .card .col-md-4 img {
+            height: 200px;
+            /* Adjust image height on smaller screens */
+        }
+    }
+
+    @media (max-width: 576px) {
+        .hero-section {
+            padding: 80px 0;
+        }
+
+        .hero-section h1 {
+            font-size: 2.2rem;
+        }
+
+        .hero-section p {
+            font-size: 1rem;
+        }
+
+        .footer-links {
+            margin-bottom: 30px;
+        }
+
+        .modal-dialog {
+            margin: 10px;
+        }
+
+        .modal-content {
+            border-radius: 8px;
+        }
+
+        .course-details-img {
+            height: 200px;
+        }
+    }
+    </style>
+</head>
+
+<body>
+     <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="image/logo2.png" alt="Logic Minds Logo" class="logo-img">
+                <img src="image/name.png" alt="Logic Minds" class="logo-text">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="course.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="login.php">Login</a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Advance Your Tech Career</h1>
+            <p class="lead">Master in-demand skills with our industry-relevant IT courses taught by experienced
+                professionals.</p>
+            <div class="d-flex justify-content-center flex-wrap gap-3">
+                <a href="#courses" class="btn btn-primary btn-lg px-4">Browse Courses</a>
+                <a href="#popular" class="btn btn-outline-light btn-lg px-4">Popular Courses</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="container py-5" id="courses">
+        <div class="section-title">
+            <h2>Our IT Courses</h2>
+        </div>
+
+        <div class="row">
+            <!-- Course 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <div class="course-img position-relative">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Full Stack Development">
+                        <span class="badge bg-success">Bestseller</span>
+                    </div>
+                    <div class="course-body">
+                        <h5 class="course-title">Full Stack Web Development</h5>
+                        <p class="course-desc">Master both front-end and back-end technologies to build complete web
+                            applications.</p>
+                        <div class="course-meta">
+                            <span class="course-price">₹8,999</span>
+                            <span class="course-duration"><i class="far fa-clock"></i> 12 Weeks</span>
+                        </div>
+                        <button class="btn btn-enroll" data-bs-toggle="modal" data-bs-target="#fullStackModal">View
+                            Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <div class="course-img position-relative">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80"
+                            alt="Data Science">
+                        <!-- No badge for this one -->
+                    </div>
+                    <div class="course-body">
+                        <h5 class="course-title">Data Science & Machine Learning</h5>
+                        <p class="course-desc">Learn to extract insights from data using Python, R, and machine learning
+                            algorithms.</p>
+                        <div class="course-meta">
+                            <span class="course-price">₹12,999</span>
+                            <span class="course-duration"><i class="far fa-clock"></i> 16 Weeks</span>
+                        </div>
+                        <button class="btn btn-enroll" data-bs-toggle="modal" data-bs-target="#dataScienceModal">View
+                            Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <div class="course-img position-relative">
+                        <img src="https://imgs.search.brave.com/aWOmUXc_VG2_YVJ0D48it0UtUOG5nTCJF4zhUqT6ySg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQ4/NDkxMjgwNy9waG90/by9jbG91ZC1jb21w/dXRpbmctY29uY2Vw/dC1kaWdpdGFsLWNs/b3VkLXNvbHV0aW9u/cy1vbi1wY2ItZnV0/dXJpc3RpYy1iYWNr/Z3JvdW5kLndlYnA_/Yj0xJnM9NjEyeDYx/MiZ3PTAmaz0yMCZj/PVJkZnB2eHVNeE03/b093TjVaWVU4X2Fx/dnZRU0t1Y0NrdjhO/VGxFQ2lqZ289"
+                            alt="Cloud Computing">
+                        <span class="badge bg-info">New</span>
+                    </div>
+                    <div class="course-body">
+                        <h5 class="course-title">Cloud Computing with AWS</h5>
+                        <p class="course-desc">Become an AWS cloud architect and learn to deploy scalable applications.
+                        </p>
+                        <div class="course-meta">
+                            <span class="course-price">₹9,999</span>
+                            <span class="course-duration"><i class="far fa-clock"></i> 10 Weeks</span>
+                        </div>
+                        <button class="btn btn-enroll" data-bs-toggle="modal" data-bs-target="#cloudModal">View
+                            Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 4 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <div class="course-img position-relative">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Cybersecurity">
+                        <!-- No badge -->
+                    </div>
+                    <div class="course-body">
+                        <h5 class="course-title">Cybersecurity Fundamentals</h5>
+                        <p class="course-desc">Learn to protect systems and networks from digital attacks and
+                            vulnerabilities.</p>
+                        <div class="course-meta">
+                            <span class="course-price">₹10,499</span>
+                            <span class="course-duration"><i class="far fa-clock"></i> 14 Weeks</span>
+                        </div>
+                        <button class="btn btn-enroll" data-bs-toggle="modal" data-bs-target="#cyberModal">View
+                            Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 5 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <div class="course-img position-relative">
+                        <img src="https://imgs.search.brave.com/HJQD9xszGxJlK7Ny9xXOHsfxi3YEgtuzaoLl-gkpTVg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9z/bWFydHBob25lLXdp/dGgtdXNlci1pbnRl/cmZhY2UtY29uY2Vw/dF81MjY4My0xMDQy/MTIuanBnP3NlbXQ9/YWlzX2h5YnJpZCZ3/PTc0MA"
+                            alt="Mobile Development">
+                        <!-- No badge -->
+                    </div>
+                    <div class="course-body">
+                        <h5 class="course-title">Mobile App Development</h5>
+                        <p class="course-desc">Build cross-platform mobile applications using React Native and Flutter.
+                        </p>
+                        <div class="course-meta">
+                            <span class="course-price">₹8,499</span>
+                            <span class="course-duration"><i class="far fa-clock"></i> 10 Weeks</span>
+                        </div>
+                        <button class="btn btn-enroll" data-bs-toggle="modal" data-bs-target="#mobileModal">View
+                            Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 6 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <div class="course-img position-relative">
+                        <img src="https://imgs.search.brave.com/7KeTFKiDFQFDLK3NRM7u836-orM33_lly5IXnWtr5Dw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTMw/MzE2OTE4OC9waG90/by9kZXZvcHMtY29u/Y2VwdC5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9UnpnTU5w/NFRxSXpwalpkZFo0/THF5dW45dVhnNVAx/dUY1ODZCQkl5MUZ1/OD0"
+                            class="course-details-img" alt="Microsoft Office">
+                        <span class="badge bg-warning">Popular</span>
+                    </div>
+                    <div class="course-body">
+                        <h5 class="course-title">DevOps Engineering</h5>
+                        <p class="course-desc">Master CI/CD pipelines, containerization, and infrastructure as code
+                            practices.</p>
+                        <div class="course-meta">
+                            <span class="course-price">₹11,999</span>
+                            <span class="course-duration"><i class="far fa-clock"></i> 12 Weeks</span>
+                        </div>
+                        <button class="btn btn-enroll" data-bs-toggle="modal" data-bs-target="#devopsModal">View
+                            Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Graphic Design Courses Section -->
+    <section class="container py-5" id="graphic-design">
+        <div class="section-title">
+            <h2>Graphic Design Courses</h2>
+        </div>
+
+        <div class="row">
+            <!-- Course 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <div class="course-img position-relative">
+                        <img src="https://images.unsplash.com/photo-1613909207039-6b173b755cc1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Adobe Photoshop">
+                        <span class="badge bg-success">Bestseller</span>
+                    </div>
+                    <div class="course-body">
+                        <h5 class="course-title">Adobe Photoshop Masterclass</h5>
+                        <p class="course-desc">Learn professional photo editing, digital painting, and graphic design
+                            techniques in Photoshop.</p>
+                        <div class="course-meta">
+                            <span class="course-price">₹6,999</span>
+                            <span class="course-duration"><i class="far fa-clock"></i> 8 Weeks</span>
+                        </div>
+                        <button class="btn btn-enroll" data-bs-toggle="modal" data-bs-target="#photoshopModal">View
+                            Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <div class="course-img position-relative">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80"
+                            alt="Adobe Illustrator">
+                        <span class="badge bg-info">Trending</span>
+                    </div>
+                    <div class="course-body">
+                        <h5 class="course-title">Adobe Illustrator for Beginners</h5>
+                        <p class="course-desc">Master vector graphics creation, logo design, and illustration techniques
+                            in Illustrator.</p>
+                        <div class="course-meta">
+                            <span class="course-price">₹6,499</span>
+                            <span class="course-duration"><i class="far fa-clock"></i> 8 Weeks</span>
+                        </div>
+                        <button class="btn btn-enroll" data-bs-toggle="modal" data-bs-target="#illustratorModal">View
+                            Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <div class="course-img position-relative">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
+                            alt="UI/UX Design">
+                        <span class="badge bg-danger">Limited Seats</span>
+                    </div>
+                    <div class="course-body">
+                        <h5 class="course-title">UI/UX Design Fundamentals</h5>
+                        <p class="course-desc">Learn user interface and experience design principles, prototyping, and
+                            tools like Figma.</p>
+                        <div class="course-meta">
+                            <span class="course-price">₹9,999</span>
+                            <span class="course-duration"><i class="far fa-clock"></i> 10 Weeks</span>
+                        </div>
+                        <button class="btn btn-enroll" data-bs-toggle="modal" data-bs-target="#uiuxModal">View
+                            Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software Training Courses Section -->
+    <section class="container py-5" id="software-training">
+        <div class="section-title">
+            <h2>Software Training</h2>
+        </div>
+
+        <div class="row">
+            <!-- Course 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <div class="course-img position-relative">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Microsoft Office">
+                        <span class="badge bg-success">Popular</span>
+                    </div>
+                    <div class="course-body">
+                        <h5 class="course-title">Microsoft Office Mastery</h5>
+                        <p class="course-desc">Become proficient in Word, Excel, PowerPoint, and Outlook for
+                            professional use.</p>
+                        <div class="course-meta">
+                            <span class="course-price">₹4,999</span>
+                            <span class="course-duration"><i class="far fa-clock"></i> 6 Weeks</span>
+                        </div>
+                        <button class="btn btn-enroll" data-bs-toggle="modal" data-bs-target="#officeModal">View
+                            Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <div class="course-img position-relative">
+                        <img src="https://imgs.search.brave.com/HrH5sGI5lKtSzxAeE4BLj629ILEd1sA5AElMQyV8Whs/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQx/OTY1OTM2Ni9waG90/by9tZWNoYW5pY2Fs/LXBpZWNlLWNhZC1k/ZXNpZ24uanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPUtZMzRQ/Zm9GVjExeFVRTnV3/NHc5bTdldHZOYllv/eUN1VjRNeHRMT210/Mkk9"
+                            alt="AutoCAD">
+                    </div>
+                    <div class="course-body">
+                        <h5 class="course-title">AutoCAD for Beginners</h5>
+                        <p class="course-desc">Learn 2D and 3D drafting and modeling for engineering and architectural
+                            design.</p>
+                        <div class="course-meta">
+                            <span class="course-price">₹7,999</span>
+                            <span class="course-duration"><i class="far fa-clock"></i> 8 Weeks</span>
+                        </div>
+                        <button class="btn btn-enroll" data-bs-toggle="modal" data-bs-target="#autocadModal">View
+                            Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <div class="course-img position-relative">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
+                            alt="Video Editing">
+                        <span class="badge bg-info">New</span>
+                    </div>
+                    <div class="course-body">
+                        <h5 class="course-title">Video Editing with Premiere Pro</h5>
+                        <p class="course-desc">Master professional video editing techniques using Adobe Premiere Pro.
+                        </p>
+                        <div class="course-meta">
+                            <span class="course-price">₹8,499</span>
+                            <span class="course-duration"><i class="far fa-clock"></i> 8 Weeks</span>
+                        </div>
+                        <button class="btn btn-enroll" data-bs-toggle="modal" data-bs-target="#premiereModal">View
+                            Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Basic IT Courses Section -->
+    <section class="container py-5" id="basic-it">
+        <div class="section-title">
+            <h2>Basic IT Courses</h2>
+        </div>
+
+        <div class="row">
+            <!-- Course 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <div class="course-img position-relative">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+                            alt="Computer Basics">
+                        <span class="badge bg-success">Beginner</span>
+                    </div>
+                    <div class="course-body">
+                        <h5 class="course-title">Computer Fundamentals</h5>
+                        <p class="course-desc">Learn essential computer skills including hardware, software, and basic
+                            troubleshooting.</p>
+                        <div class="course-meta">
+                            <span class="course-price">₹3,999</span>
+                            <span class="course-duration"><i class="far fa-clock"></i> 4 Weeks</span>
+                        </div>
+                        <button class="btn btn-enroll" data-bs-toggle="modal" data-bs-target="#computerBasicsModal">View
+                            Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <div class="course-img position-relative">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+                            alt="Internet Basics">
+                    </div>
+                    <div class="course-body">
+                        <h5 class="course-title">Internet & Email Essentials</h5>
+                        <p class="course-desc">Master web browsing, online safety, email communication, and cloud
+                            services.</p>
+                        <div class="course-meta">
+                            <span class="course-price">₹3,499</span>
+                            <span class="course-duration"><i class="far fa-clock"></i> 4 Weeks</span>
+                        </div>
+                        <button class="btn btn-enroll" data-bs-toggle="modal" data-bs-target="#internetBasicsModal">View
+                            Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <div class="course-img position-relative">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+                            alt="Typing Course">
+                        <span class="badge bg-warning">Skill Building</span>
+                    </div>
+                    <div class="course-body">
+                        <h5 class="course-title">Touch Typing Mastery</h5>
+                        <p class="course-desc">Improve your typing speed and accuracy with proper techniques and
+                            practice.</p>
+                        <div class="course-meta">
+                            <span class="course-price">₹2,999</span>
+                            <span class="course-duration"><i class="far fa-clock"></i> 4 Weeks</span>
+                        </div>
+                        <button class="btn btn-enroll" data-bs-toggle="modal" data-bs-target="#typingModal">View
+                            Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Courses Section -->
+    <section class="py-5" id="popular">
+        <div class="container">
+            <div class="section-title">
+                <h2>Most Popular Courses</h2>
+            </div>
+
+            <div class="row g-4">
+                <!-- Course 1: AI -->
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-4 position-relative">
+                                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+                                    class="img-fluid h-100 w-100 object-cover" alt="AI Course">
+                                <span class="badge bg-success position-absolute">Bestseller</span>
+                            </div>
+                            <div class="col-md-8 d-flex flex-column">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title fw-bold mb-2">Artificial Intelligence</h5>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="text-warning me-2">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                class="fas fa-star-half-alt"></i>
+                                        </div>
+                                        <small class="text-muted">4.5 (1,234 reviews)</small>
+                                    </div>
+                                    <p class="card-text mb-3">Build intelligent systems using Python and TensorFlow with
+                                        real-world applications.</p>
+                                    <div class="mt-auto">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="text-primary fw-bold fs-5">₹14,999</span>
+                                                <small class="text-muted d-block">or ₹5,000/month</small>
+                                            </div>
+                                            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal"
+                                                data-bs-target="#aiModal">
+                                                View Details
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-transparent border-top-0 pt-0 pb-3 px-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small><i class="far fa-clock"></i> 14 Weeks </small>
+                                        <small><i class="fas fa-user-graduate"></i> 850+ Enrolled </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 2: Blockchain -->
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-4 position-relative">
+                                <img src="https://images.unsplash.com/photo-1624953587687-daf255b6b80a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+                                    class="img-fluid h-100 w-100 object-cover" alt="Blockchain Course">
+                                <span class="badge bg-info position-absolute">Trending</span>
+                            </div>
+                            <div class="col-md-8 d-flex flex-column">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title fw-bold mb-2">Blockchain Development</h5>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="text-warning me-2">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                class="far fa-star"></i>
+                                        </div>
+                                        <small class="text-muted">4.0 (876 reviews)</small>
+                                    </div>
+                                    <p class="card-text mb-3">Master Ethereum, Solidity, and smart contract development
+                                        for decentralized applications.</p>
+                                    <div class="mt-auto">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="text-primary fw-bold fs-5">₹15,499</span>
+                                                <small class="text-muted d-block">or ₹5,166/month</small>
+                                            </div>
+                                            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal"
+                                                data-bs-target="#blockchainModal">
+                                                View Details
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-transparent border-top-0 pt-0 pb-3 px-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small><i class="far fa-clock"></i> 16 Weeks </small>
+                                        <small><i class="fas fa-user-graduate"></i> 720+ Enrolled </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 3: Big Data -->
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-4 position-relative">
+                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                                    class="img-fluid h-100 w-100 object-cover" alt="Big Data Course">
+                                <span class="badge bg-warning position-absolute">Hot</span>
+                            </div>
+                            <div class="col-md-8 d-flex flex-column">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title fw-bold mb-2">Big Data Analytics</h5>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="text-warning me-2">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                class="fas fa-star"></i>
+                                        </div>
+                                        <small class="text-muted">5.0 (1,542 reviews)</small>
+                                    </div>
+                                    <p class="card-text mb-3">Learn Hadoop, Spark, and data processing at scale for
+                                        enterprise applications.</p>
+                                    <div class="mt-auto">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="text-primary fw-bold fs-5">₹13,999</span>
+                                                <small class="text-muted d-block">or ₹4,666/month</small>
+                                            </div>
+                                            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal"
+                                                data-bs-target="#bigdataModal">
+                                                View Details
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-transparent border-top-0 pt-0 pb-3 px-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small><i class="far fa-clock"></i> 12 Weeks </small>
+                                        <small><i class="fas fa-user-graduate"></i> 1,200+ Enrolled </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 4: IoT -->
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-4 position-relative">
+                                <img src="https://imgs.search.brave.com/5cxh83MvbWSvONQOqCKXMqfv5Z_0mkF4JFqPqIf03OY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAyLzI1LzEyLzQ4/LzM2MF9GXzIyNTEy/NDg1Nl9mN29nSlE1/MUJHSlNJZ2hJRkV0/eUpqa0tQaXJrc1RJ/Ti5qcGc"
+                                    class="img-fluid h-100 w-100 object-cover" alt="IoT Course">
+                                <span class="badge bg-danger position-absolute">Limited Seats</span>
+                            </div>
+                            <div class="col-md-8 d-flex flex-column">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title fw-bold mb-2">Internet of Things (IoT)</h5>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="text-warning me-2">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i
+                                                class="far fa-star"></i>
+                                        </div>
+                                        <small class="text-muted">3.5 (654 reviews)</small>
+                                    </div>
+                                    <p class="card-text mb-3">Build connected devices using Raspberry Pi, Arduino, and
+                                        cloud platforms.</p>
+                                    <div class="mt-auto">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="text-primary fw-bold fs-5">₹11,499</span>
+                                                <small class="text-muted d-block">or ₹3,833/month</small>
+                                            </div>
+                                            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal"
+                                                data-bs-target="#iotModal">
+                                                View Details
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-transparent border-top-0 pt-0 pb-3 px-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small><i class="far fa-clock"></i> 10 Weeks </small>
+                                        <small><i class="fas fa-user-graduate"></i> 580+ Enrolled </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- / .row -->
+        </div> <!-- / .container -->
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="container py-5 why-choose-us">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
+                    class="img-fluid rounded shadow-lg" alt="Learning Experience">
+            </div>
+            <div class="col-lg-6">
+                <div class="section-title text-start mb-4 pb-0">
+                    <h2 class="after-none">Why Choose Our IT Courses?</h2>
+                    <style>
+                    .section-title h2.after-none::after {
+                        display: none;
+                    }
+                    </style> <!-- Quick hide for the underline -->
+                </div>
+                <div class="d-flex mb-4">
+                    <div class="me-4">
+                        <div class="why-choose-us-icon-bg">
+                            <i class="fas fa-chalkboard-teacher fs-4"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h5>Industry Expert Instructors</h5>
+                        <p class="mb-0">Learn from professionals working at top tech companies with real-world
+                            experience.</p>
+                    </div>
+                </div>
+                <div class="d-flex mb-4">
+                    <div class="me-4">
+                        <div class="why-choose-us-icon-bg">
+                            <i class="fas fa-laptop-code fs-4"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h5>Hands-on Projects</h5>
+                        <p class="mb-0">Gain practical experience by working on real projects and building your
+                            portfolio.</p>
+                    </div>
+                </div>
+                <div class="d-flex mb-4">
+                    <div class="me-4">
+                        <div class="why-choose-us-icon-bg">
+                            <i class="fas fa-briefcase fs-4"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h5>Career Support</h5>
+                        <p class="mb-0">Get resume reviews, interview preparation, and job placement assistance.</p>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="me-4">
+                        <div class="why-choose-us-icon-bg">
+                            <i class="fas fa-certificate fs-4"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h5>Industry-Recognized Certificates</h5>
+                        <p class="mb-0">Earn certificates that demonstrate your skills to potential employers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Students Say</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body d-flex flex-column">
+                            <div class="mb-3 text-warning">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="card-text flex-grow-1">"The Full Stack course completely transformed my career.
+                                Within 3 months of completing it, I landed a job as a junior developer at a tech
+                                startup."</p>
+                            <div class="d-flex align-items-center mt-auto">
+                                <img src="https://randomuser.me/api/portraits/women/32.jpg" class="rounded-circle me-3"
+                                    width="50" alt="Student Priya Sharma">
+                                <div>
+                                    <h6 class="mb-0">Priya Sharma</h6>
+                                    <small>Full Stack Developer</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body d-flex flex-column">
+                            <div class="mb-3 text-warning">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="card-text flex-grow-1">"The Data Science program provided me with all the tools I
+                                needed to transition from a business analyst role to a data scientist position. The
+                                projects were especially valuable."</p>
+                            <div class="d-flex align-items-center mt-auto">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" class="rounded-circle me-3"
+                                    width="50" alt="Student Rahul Patel">
+                                <div>
+                                    <h6 class="mb-0">Rahul Patel</h6>
+                                    <small>Data Scientist</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body d-flex flex-column">
+                            <div class="mb-3 text-warning">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="card-text flex-grow-1">"As a complete beginner to cloud computing, the AWS course
+                                was perfect. The instructor broke down complex concepts into easy-to-understand
+                                lessons."</p>
+                            <div class="d-flex align-items-center mt-auto">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle me-3"
+                                    width="50" alt="Student Ananya Gupta">
+                                <div>
+                                    <h6 class="mb-0">Ananya Gupta</h6>
+                                    <small>Cloud Engineer</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="footer-about">
+                        <img src="image\logo2.png" alt="Logic Minds Logo" class="footer-logo">
+                        <p>Logic Minds is a premier online learning platform committed to providing high-quality,
+                            accessible education to help individuals achieve their professional goals.</p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/logicmindsbyparii" target="_blank"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
+                            <a href="https://www.instagram.com/logic_minds_by_parii/" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/logicmindsbyparii/" target="_blank"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                            <!-- <a href="#"><i class="fab fa-youtube"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="index.php"><i class="fas fa-chevron-right"></i> Home</a></li>
+                            <li><a href="course.php"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                            <li><a href="about.php"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                            <li><a href="contact.php"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                            <!-- <li><a href="login.php"><i class="fas fa-chevron-right"></i> Login</a></li> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Categories</h5>
+                        <ul>
+                            <li><a href="course.php"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+                            <li><a href="course.php"><i class="fas fa-chevron-right"></i> Data Science</a></li>
+                            <li><a href="course.php"><i class="fas fa-chevron-right"></i> Cloud Computing</a></li>
+                            <li><a href="course.php"><i class="fas fa-chevron-right"></i> Cybersecurity</a></li>
+                            <li><a href="course.php"><i class="fas fa-chevron-right"></i> Mobile Development</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="footer-links">
+                        <h5>Newsletter</h5>
+                        <p>Subscribe to our newsletter for the latest course updates, offers, and learning resources.
+                        </p>
+                        <form class="mt-4 newsletter-form">
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Your Email Address">
+                            </div>
+                            <button class="btn" type="button">Subscribe Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© <script>
+                    document.write(new Date().getFullYear())
+                    </script> Logic Minds. All Rights Reserved.</p>
+                <p>Designed & Powered by <a href="https://www.instagram.com/logic_minds_by_parii/" target="_blank"
+                        rel="noopener noreferrer"><b>Logic Minds by Parii</b></a></p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Course Modals -->
+
+    <!-- Full Stack Modal -->
+    <div class="modal fade" id="fullStackModal" tabindex="-1" aria-labelledby="fullStackModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="fullStackModalLabel">Full Stack Web Development</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        class="course-details-img" alt="Full Stack Development">
+                    <p>Become a proficient full-stack developer by mastering both front-end and back-end technologies.
+                        This comprehensive course will take you from the fundamentals to advanced concepts, enabling you
+                        to build complete web applications.</p>
+
+                    <h6 class="mt-4 mb-3">What You'll Learn:</h6>
+                    <ul class="course-features list-unstyled">
+                        <li><i class="fas fa-check-circle"></i> HTML5, CSS3, JavaScript (ES6+)</li>
+                        <li><i class="fas fa-check-circle"></i> Front-end frameworks (React, Angular, or Vue)</li>
+                        <li><i class="fas fa-check-circle"></i> Back-end development with Node.js and Express</li>
+                        <li><i class="fas fa-check-circle"></i> Database systems (MongoDB and SQL)</li>
+                        <li><i class="fas fa-check-circle"></i> RESTful API design and development</li>
+                        <li><i class="fas fa-check-circle"></i> Authentication and authorization</li>
+                        <li><i class="fas fa-check-circle"></i> Deployment and DevOps basics</li>
+                    </ul>
+
+                    <div class="row mt-4 gy-3">
+                        <div class="col-md-6">
+                            <h6>Course Details:</h6>
+                            <ul class="list-unstyled">
+                                <li><strong>Duration:</strong> 12 Weeks</li>
+                                <li><strong>Effort:</strong> 10-15 hours/week</li>
+                                <li><strong>Format:</strong> Online, Self-paced</li>
+                                <li><strong>Prerequisites:</strong> Basic programming knowledge</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Pricing:</h6>
+                            <div class="bg-light p-3 rounded">
+                                <h4 class="text-primary fw-bold">₹38,000</h4>
+                                <p class="mb-2 text-muted small">or 3 monthly payments of ₹3,333</p>
+                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data Science Modal -->
+    <div class="modal fade" id="dataScienceModal" tabindex="-1" aria-labelledby="dataScienceModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="dataScienceModalLabel">Data Science & Machine Learning</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80"
+                        class="course-details-img" alt="Data Science">
+                    <p>Master the tools and techniques used by data scientists to extract insights from data. This
+                        course covers everything from data wrangling to machine learning algorithms and their practical
+                        applications.</p>
+
+                    <h6 class="mt-4 mb-3">What You'll Learn:</h6>
+                    <ul class="course-features list-unstyled">
+                        <li><i class="fas fa-check-circle"></i> Python for data analysis (NumPy, Pandas)</li>
+                        <li><i class="fas fa-check-circle"></i> Data visualization with Matplotlib and Seaborn</li>
+                        <li><i class="fas fa-check-circle"></i> Statistical analysis and hypothesis testing</li>
+                        <li><i class="fas fa-check-circle"></i> Machine learning algorithms (supervised/unsupervised)
+                        </li>
+                        <li><i class="fas fa-check-circle"></i> Deep learning fundamentals with TensorFlow/Keras</li>
+                        <li><i class="fas fa-check-circle"></i> Natural Language Processing (NLP) basics</li>
+                        <li><i class="fas fa-check-circle"></i> Model deployment and productionization</li>
+                    </ul>
+
+                    <div class="row mt-4 gy-3">
+                        <div class="col-md-6">
+                            <h6>Course Details:</h6>
+                            <ul class="list-unstyled">
+                                <li><strong>Duration:</strong> 16 Weeks</li>
+                                <li><strong>Effort:</strong> 12-18 hours/week</li>
+                                <li><strong>Format:</strong> Online, Instructor-led</li>
+                                <li><strong>Prerequisites:</strong> Python basics, linear algebra</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Pricing:</h6>
+                            <div class="bg-light p-3 rounded">
+                                <h4 class="text-primary fw-bold">₹12,999</h4>
+                                <p class="mb-2 text-muted small">or 4 monthly payments of ₹3,750</p>
+                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cloud Computing Modal -->
+    <div class="modal fade" id="cloudModal" tabindex="-1" aria-labelledby="cloudModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cloudModalLabel">Cloud Computing with AWS</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://imgs.search.brave.com/aWOmUXc_VG2_YVJ0D48it0UtUOG5nTCJF4zhUqT6ySg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQ4/NDkxMjgwNy9waG90/by9jbG91ZC1jb21w/dXRpbmctY29uY2Vw/dC1kaWdpdGFsLWNs/b3VkLXNvbHV0aW9u/cy1vbi1wY2ItZnV0/dXJpc3RpYy1iYWNr/Z3JvdW5kLndlYnA_/Yj0xJnM9NjEyeDYx/MiZ3PTAmaz0yMCZj/PVJkZnB2eHVNeE03/b093TjVaWVU4X2Fx/dnZRU0t1Y0NrdjhO/VGxFQ2lqZ289"
+                        class="course-details-img" alt="Cloud Computing">
+                    <p>Master Amazon Web Services (AWS) and become proficient in cloud architecture, deployment, and
+                        management. This course prepares you for AWS certifications and real-world cloud solutions.</p>
+
+                    <h6 class="mt-4 mb-3">What You'll Learn:</h6>
+                    <ul class="course-features list-unstyled">
+                        <li><i class="fas fa-check-circle"></i> AWS core services (EC2, S3, RDS, Lambda)</li>
+                        <li><i class="fas fa-check-circle"></i> Cloud architecture and best practices</li>
+                        <li><i class="fas fa-check-circle"></i> Infrastructure as Code (CloudFormation, Terraform)</li>
+                        <li><i class="fas fa-check-circle"></i> Security and compliance in the cloud</li>
+                        <li><i class="fas fa-check-circle"></i> Serverless computing and microservices</li>
+                        <li><i class="fas fa-check-circle"></i> Monitoring and cost optimization</li>
+                        <li><i class="fas fa-check-circle"></i> Disaster recovery strategies</li>
+                    </ul>
+
+                    <div class="row mt-4 gy-3">
+                        <div class="col-md-6">
+                            <h6>Course Details:</h6>
+                            <ul class="list-unstyled">
+                                <li><strong>Duration:</strong> 10 Weeks</li>
+                                <li><strong>Effort:</strong> 8-12 hours/week</li>
+                                <li><strong>Format:</strong> Online, Instructor-led</li>
+                                <li><strong>Prerequisites:</strong> Basic networking knowledge</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Pricing:</h6>
+                            <div class="bg-light p-3 rounded">
+                                <h4 class="text-primary fw-bold">₹9,999</h4>
+                                <p class="mb-2 text-muted small">or 3 monthly payments of ₹3,666</p>
+                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Other Modals (Cybersecurity, Mobile, DevOps, AI, Blockchain, BigData, IoT) follow the same structure -->
+    <!-- Add the content for the remaining modals here, following the pattern above -->
+
+    <!-- Cybersecurity Modal -->
+    <div class="modal fade" id="cyberModal" tabindex="-1" aria-labelledby="cyberModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cyberModalLabel">Cybersecurity Fundamentals</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        class="course-details-img" alt="Cybersecurity">
+                    <p>Gain essential cybersecurity skills to protect systems and networks from digital threats. This
+                        course covers ethical hacking, penetration testing, and security best practices.</p>
+                    <h6 class="mt-4 mb-3">What You'll Learn:</h6>
+                    <ul class="course-features list-unstyled">
+                        <li><i class="fas fa-check-circle"></i> Network security fundamentals</li>
+                        <li><i class="fas fa-check-circle"></i> Cryptography and encryption techniques</li>
+                        <li><i class="fas fa-check-circle"></i> Ethical hacking and penetration testing</li>
+                        <li><i class="fas fa-check-circle"></i> Vulnerability assessment and management</li>
+                        <li><i class="fas fa-check-circle"></i> Security operations and incident response</li>
+                        <li><i class="fas fa-check-circle"></i> Compliance and regulatory requirements</li>
+                        <li><i class="fas fa-check-circle"></i> Security tools (Kali Linux, Metasploit, Wireshark)</li>
+                    </ul>
+                    <div class="row mt-4 gy-3">
+                        <div class="col-md-6">
+                            <h6>Course Details:</h6>
+                            <ul class="list-unstyled">
+                                <li><strong>Duration:</strong> 14 Weeks</li>
+                                <li><strong>Effort:</strong> 10-15 hours/week</li>
+                                <li><strong>Format:</strong> Online, Instructor-led</li>
+                                <li><strong>Prerequisites:</strong> Basic IT knowledge</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Pricing:</h6>
+                            <div class="bg-light p-3 rounded">
+                                <h4 class="text-primary fw-bold">₹10,499</h4>
+                                <p class="mb-2 text-muted small">or 3 monthly payments of ₹3,833</p>
+                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Development Modal -->
+    <div class="modal fade" id="mobileModal" tabindex="-1" aria-labelledby="mobileModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mobileModalLabel">Mobile App Development</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://imgs.search.brave.com/HJQD9xszGxJlK7Ny9xXOHsfxi3YEgtuzaoLl-gkpTVg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9z/bWFydHBob25lLXdp/dGgtdXNlci1pbnRl/cmZhY2UtY29uY2Vw/dF81MjY4My0xMDQy/MTIuanBnP3NlbXQ9/YWlzX2h5YnJpZCZ3/PTc0MA"
+                        class="course-details-img" alt="Mobile Development">
+                    <p>Build cross-platform mobile applications using modern frameworks like React Native and Flutter.
+                        Learn to create apps for both iOS and Android from a single codebase.</p>
+                    <h6 class="mt-4 mb-3">What You'll Learn:</h6>
+                    <ul class="course-features list-unstyled">
+                        <li><i class="fas fa-check-circle"></i> React Native fundamentals</li>
+                        <li><i class="fas fa-check-circle"></i> Flutter framework and Dart language</li>
+                        <li><i class="fas fa-check-circle"></i> Mobile UI/UX design principles</li>
+                        <li><i class="fas fa-check-circle"></i> State management solutions</li>
+                        <li><i class="fas fa-check-circle"></i> API integration and data handling</li>
+                        <li><i class="fas fa-check-circle"></i> Native device features (camera, GPS, etc.)</li>
+                        <li><i class="fas fa-check-circle"></i> App publishing to stores</li>
+                    </ul>
+                    <div class="row mt-4 gy-3">
+                        <div class="col-md-6">
+                            <h6>Course Details:</h6>
+                            <ul class="list-unstyled">
+                                <li><strong>Duration:</strong> 10 Weeks</li>
+                                <li><strong>Effort:</strong> 8-12 hours/week</li>
+                                <li><strong>Format:</strong> Online, Self-paced</li>
+                                <li><strong>Prerequisites:</strong> JavaScript basics</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Pricing:</h6>
+                            <div class="bg-light p-3 rounded">
+                                <h4 class="text-primary fw-bold">₹8,499</h4>
+                                <p class="mb-2 text-muted small">or 3 monthly payments of ₹3,000</p>
+                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DevOps Modal -->
+    <div class="modal fade" id="devopsModal" tabindex="-1" aria-labelledby="devopsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="devopsModalLabel">DevOps Engineering</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://imgs.search.brave.com/7KeTFKiDFQFDLK3NRM7u836-orM33_lly5IXnWtr5Dw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTMw/MzE2OTE4OC9waG90/by9kZXZvcHMtY29u/Y2VwdC5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9UnpnTU5w/NFRxSXpwalpkZFo0/THF5dW45dVhnNVAx/dUY1ODZCQkl5MUZ1/OD0"
+                        class="course-details-img" alt="Microsoft Office">
+                    <p>Master the DevOps methodology and tools to streamline software development and deployment. Learn
+                        CI/CD pipelines, containerization, and infrastructure automation.</p>
+                    <h6 class="mt-4 mb-3">What You'll Learn:</h6>
+                    <ul class="course-features list-unstyled">
+                        <li><i class="fas fa-check-circle"></i> Continuous Integration/Continuous Deployment (CI/CD)
+                        </li>
+                        <li><i class="fas fa-check-circle"></i> Docker containerization</li>
+                        <li><i class="fas fa-check-circle"></i> Kubernetes orchestration</li>
+                        <li><i class="fas fa-check-circle"></i> Infrastructure as Code (Terraform, Ansible)</li>
+                        <li><i class="fas fa-check-circle"></i> Monitoring and logging solutions</li>
+                        <li><i class="fas fa-check-circle"></i> Cloud-native DevOps practices</li>
+                        <li><i class="fas fa-check-circle"></i> Security in DevOps (DevSecOps)</li>
+                    </ul>
+                    <div class="row mt-4 gy-3">
+                        <div class="col-md-6">
+                            <h6>Course Details:</h6>
+                            <ul class="list-unstyled">
+                                <li><strong>Duration:</strong> 12 Weeks</li>
+                                <li><strong>Effort:</strong> 10-15 hours/week</li>
+                                <li><strong>Format:</strong> Online, Instructor-led</li>
+                                <li><strong>Prerequisites:</strong> Basic Linux and cloud knowledge</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Pricing:</h6>
+                            <div class="bg-light p-3 rounded">
+                                <h4 class="text-primary fw-bold">₹11,999</h4>
+                                <p class="mb-2 text-muted small">or 3 monthly payments of ₹4,333</p>
+                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Modal -->
+    <div class="modal fade" id="aiModal" tabindex="-1" aria-labelledby="aiModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="aiModalLabel">Artificial Intelligence</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+                        class="course-details-img" alt="Artificial Intelligence">
+                    <p>Dive into the world of Artificial Intelligence and learn to build intelligent systems using
+                        Python, TensorFlow, and other cutting-edge technologies.</p>
+                    <h6 class="mt-4 mb-3">What You'll Learn:</h6>
+                    <ul class="course-features list-unstyled">
+                        <li><i class="fas fa-check-circle"></i> Machine learning fundamentals</li>
+                        <li><i class="fas fa-check-circle"></i> Neural networks and deep learning</li>
+                        <li><i class="fas fa-check-circle"></i> Computer vision with OpenCV</li>
+                        <li><i class="fas fa-check-circle"></i> Natural Language Processing (NLP)</li>
+                        <li><i class="fas fa-check-circle"></i> Reinforcement learning</li>
+                        <li><i class="fas fa-check-circle"></i> AI ethics and responsible AI</li>
+                        <li><i class="fas fa-check-circle"></i> Deploying AI models in production</li>
+                    </ul>
+                    <div class="row mt-4 gy-3">
+                        <div class="col-md-6">
+                            <h6>Course Details:</h6>
+                            <ul class="list-unstyled">
+                                <li><strong>Duration:</strong> 14 Weeks</li>
+                                <li><strong>Effort:</strong> 12-18 hours/week</li>
+                                <li><strong>Format:</strong> Online, Instructor-led</li>
+                                <li><strong>Prerequisites:</strong> Python programming, linear algebra</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Pricing:</h6>
+                            <div class="bg-light p-3 rounded">
+                                <h4 class="text-primary fw-bold">₹14,999</h4>
+                                <p class="mb-2 text-muted small">or 4 monthly payments of ₹4,250</p>
+                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blockchain Modal -->
+    <div class="modal fade" id="blockchainModal" tabindex="-1" aria-labelledby="blockchainModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="blockchainModalLabel">Blockchain Development</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1624953587687-daf255b6b80a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+                        class="course-details-img" alt="Blockchain Development">
+                    <p>Master blockchain technology and smart contract development to build decentralized applications
+                        (DApps) on Ethereum and other platforms.</p>
+                    <h6 class="mt-4 mb-3">What You'll Learn:</h6>
+                    <ul class="course-features list-unstyled">
+                        <li><i class="fas fa-check-circle"></i> Blockchain fundamentals and cryptography</li>
+                        <li><i class="fas fa-check-circle"></i> Ethereum and smart contracts</li>
+                        <li><i class="fas fa-check-circle"></i> Solidity programming language</li>
+                        <li><i class="fas fa-check-circle"></i> Decentralized application (DApp) development</li>
+                        <li><i class="fas fa-check-circle"></i> Web3.js and interacting with blockchain</li>
+                        <li><i class="fas fa-check-circle"></i> Token standards (ERC-20, ERC-721)</li>
+                        <li><i class="fas fa-check-circle"></i> Security best practices and auditing</li>
+                    </ul>
+                    <div class="row mt-4 gy-3">
+                        <div class="col-md-6">
+                            <h6>Course Details:</h6>
+                            <ul class="list-unstyled">
+                                <li><strong>Duration:</strong> 16 Weeks</li>
+                                <li><strong>Effort:</strong> 12-15 hours/week</li>
+                                <li><strong>Format:</strong> Online, Instructor-led</li>
+                                <li><strong>Prerequisites:</strong> JavaScript basics</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Pricing:</h6>
+                            <div class="bg-light p-3 rounded">
+                                <h4 class="text-primary fw-bold">₹15,499</h4>
+                                <p class="mb-2 text-muted small">or 4 monthly payments of ₹4,375</p>
+                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Big Data Modal -->
+    <div class="modal fade" id="bigdataModal" tabindex="-1" aria-labelledby="bigdataModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bigdataModalLabel">Big Data Analytics</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                        class="course-details-img" alt="Big Data Analytics">
+                    <p>Learn to process and analyze massive datasets using Hadoop, Spark, and other big data
+                        technologies. Gain skills to work with data at scale for enterprise applications.</p>
+                    <h6 class="mt-4 mb-3">What You'll Learn:</h6>
+                    <ul class="course-features list-unstyled">
+                        <li><i class="fas fa-check-circle"></i> Hadoop ecosystem (HDFS, MapReduce, YARN)</li>
+                        <li><i class="fas fa-check-circle"></i> Apache Spark for large-scale data processing</li>
+                        <li><i class="fas fa-check-circle"></i> NoSQL databases (MongoDB, Cassandra)</li>
+                        <li><i class="fas fa-check-circle"></i> Data warehousing solutions</li>
+                        <li><i class="fas fa-check-circle"></i> Stream processing (Kafka, Spark Streaming)</li>
+                        <li><i class="fas fa-check-circle"></i> Big data on cloud platforms</li>
+                        <li><i class="fas fa-check-circle"></i> Machine learning at scale</li>
+                    </ul>
+                    <div class="row mt-4 gy-3">
+                        <div class="col-md-6">
+                            <h6>Course Details:</h6>
+                            <ul class="list-unstyled">
+                                <li><strong>Duration:</strong> 12 Weeks</li>
+                                <li><strong>Effort:</strong> 10-15 hours/week</li>
+                                <li><strong>Format:</strong> Online, Instructor-led</li>
+                                <li><strong>Prerequisites:</strong> Python or Java basics</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Pricing:</h6>
+                            <div class="bg-light p-3 rounded">
+                                <h4 class="text-primary fw-bold">₹13,999</h4>
+                                <p class="mb-2 text-muted small">or 3 monthly payments of ₹4,999</p>
+                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- IoT Modal -->
+    <div class="modal fade" id="iotModal" tabindex="-1" aria-labelledby="iotModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="iotModalLabel">Internet of Things (IoT)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://imgs.search.brave.com/5cxh83MvbWSvONQOqCKXMqfv5Z_0mkF4JFqPqIf03OY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAyLzI1LzEyLzQ4/LzM2MF9GXzIyNTEy/NDg1Nl9mN29nSlE1/MUJHSlNJZ2hJRkV0/eUpqa0tQaXJrc1RJ/Ti5qcGc"
+                        class="course-details-img" alt="Internet of Things">
+                    <p>Build connected devices and IoT solutions with hands-on projects using Raspberry Pi, Arduino, and
+                        other IoT platforms. Learn to collect, process, and analyze sensor data.</p>
+                    <h6 class="mt-4 mb-3">What You'll Learn:</h6>
+                    <ul class="course-features list-unstyled">
+                        <li><i class="fas fa-check-circle"></i> IoT architecture and protocols</li>
+                        <li><i class="fas fa-check-circle"></i> Raspberry Pi and Arduino programming</li>
+                        <li><i class="fas fa-check-circle"></i> Sensor integration and data collection</li>
+                        <li><i class="fas fa-check-circle"></i> IoT cloud platforms (AWS IoT, Azure IoT)</li>
+                        <li><i class="fas fa-check-circle"></i> Edge computing and fog computing</li>
+                        <li><i class="fas fa-check-circle"></i> IoT security considerations</li>
+                        <li><i class="fas fa-check-circle"></i> Real-world IoT applications</li>
+                    </ul>
+                    <div class="row mt-4 gy-3">
+                        <div class="col-md-6">
+                            <h6>Course Details:</h6>
+                            <ul class="list-unstyled">
+                                <li><strong>Duration:</strong> 10 Weeks</li>
+                                <li><strong>Effort:</strong> 8-12 hours/week</li>
+                                <li><strong>Format:</strong> Online, Hands-on projects</li>
+                                <li><strong>Prerequisites:</strong> Basic programming knowledge</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Pricing:</h6>
+                            <div class="bg-light p-3 rounded">
+                                <h4 class="text-primary fw-bold">₹11,499</h4>
+                                <p class="mb-2 text-muted small">or 3 monthly payments of ₹4,166</p>
+                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Photoshop Modal -->
+    <div class="modal fade" id="photoshopModal" tabindex="-1" aria-labelledby="photoshopModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="photoshopModalLabel">Adobe Photoshop Masterclass</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1613909207039-6b173b755cc1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        class="course-details-img" alt="Adobe Photoshop">
+                    <p>Master Adobe Photoshop with this comprehensive course covering photo editing, digital painting,
+                        and graphic design techniques used by professionals.</p>
+                    <h6 class="mt-4 mb-3">What You'll Learn:</h6>
+                    <ul class="course-features list-unstyled">
+                        <li><i class="fas fa-check-circle"></i> Photoshop interface and essential tools</li>
+                        <li><i class="fas fa-check-circle"></i> Professional photo retouching techniques</li>
+                        <li><i class="fas fa-check-circle"></i> Layer management and non-destructive editing</li>
+                        <li><i class="fas fa-check-circle"></i> Digital painting and illustration</li>
+                        <li><i class="fas fa-check-circle"></i> Advanced selection and masking techniques</li>
+                        <li><i class="fas fa-check-circle"></i> Typography and text effects</li>
+                        <li><i class="fas fa-check-circle"></i> Preparing files for print and web</li>
+                    </ul>
+                    <div class="row mt-4 gy-3">
+                        <div class="col-md-6">
+                            <h6>Course Details:</h6>
+                            <ul class="list-unstyled">
+                                <li><strong>Duration:</strong> 8 Weeks</li>
+                                <li><strong>Effort:</strong> 6-8 hours/week</li>
+                                <li><strong>Format:</strong> Online, Instructor-led</li>
+                                <li><strong>Prerequisites:</strong> Basic computer skills</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Pricing:</h6>
+                            <div class="bg-light p-3 rounded">
+                                <h4 class="text-primary fw-bold">₹6,999</h4>
+                                <p class="mb-2 text-muted small">or 2 monthly payments of ₹3,750</p>
+                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Illustrator Modal -->
+    <div class="modal fade" id="illustratorModal" tabindex="-1" aria-labelledby="illustratorModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="illustratorModalLabel">Adobe Illustrator for Beginners</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80"
+                        class="course-details-img" alt="Adobe Illustrator">
+                    <p>Learn vector graphics creation from scratch with Adobe Illustrator. This course covers logo
+                        design, illustrations, and professional vector artwork.</p>
+                    <h6 class="mt-4 mb-3">What You'll Learn:</h6>
+                    <ul class="course-features list-unstyled">
+                        <li><i class="fas fa-check-circle"></i> Illustrator workspace and tools</li>
+                        <li><i class="fas fa-check-circle"></i> Creating and editing vector shapes</li>
+                        <li><i class="fas fa-check-circle"></i> Working with paths and the Pen tool</li>
+                        <li><i class="fas fa-check-circle"></i> Typography and text manipulation</li>
+                        <li><i class="fas fa-check-circle"></i> Color theory and gradients</li>
+                        <li><i class="fas fa-check-circle"></i> Logo design principles</li>
+                        <li><i class="fas fa-check-circle"></i> Preparing files for print and digital</li>
+                    </ul>
+                    <div class="row mt-4 gy-3">
+                        <div class="col-md-6">
+                            <h6>Course Details:</h6>
+                            <ul class="list-unstyled">
+                                <li><strong>Duration:</strong> 8 Weeks</li>
+                                <li><strong>Effort:</strong> 6-8 hours/week</li>
+                                <li><strong>Format:</strong> Online, Self-paced</li>
+                                <li><strong>Prerequisites:</strong> Basic computer skills</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Pricing:</h6>
+                            <div class="bg-light p-3 rounded">
+                                <h4 class="text-primary fw-bold">₹6,499</h4>
+                                <p class="mb-2 text-muted small">or 2 monthly payments of ₹3,500</p>
+                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- UI/UX Modal -->
+    <div class="modal fade" id="uiuxModal" tabindex="-1" aria-labelledby="uiuxModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="uiuxModalLabel">UI/UX Design Fundamentals</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
+                        class="course-details-img" alt="UI/UX Design">
+                    <p>Master the principles of user interface and experience design. Learn to create intuitive,
+                        user-friendly digital products using industry-standard tools.</p>
+                    <h6 class="mt-4 mb-3">What You'll Learn:</h6>
+                    <ul class="course-features list-unstyled">
+                        <li><i class="fas fa-check-circle"></i> UX research and user personas</li>
+                        <li><i class="fas fa-check-circle"></i> Information architecture and wireframing</li>
+                        <li><i class="fas fa-check-circle"></i> UI design principles and best practices</li>
+                        <li><i class="fas fa-check-circle"></i> Prototyping with Figma and Adobe XD</li>
+                        <li><i class="fas fa-check-circle"></i> Usability testing and iteration</li>
+                        <li><i class="fas fa-check-circle"></i> Design systems and component libraries</li>
+                        <li><i class="fas fa-check-circle"></i> Presenting and documenting designs</li>
+                    </ul>
+                    <div class="row mt-4 gy-3">
+                        <div class="col-md-6">
+                            <h6>Course Details:</h6>
+                            <ul class="list-unstyled">
+                                <li><strong>Duration:</strong> 10 Weeks</li>
+                                <li><strong>Effort:</strong> 8-10 hours/week</li>
+                                <li><strong>Format:</strong> Online, Instructor-led</li>
+                                <li><strong>Prerequisites:</strong> Basic design knowledge helpful</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Pricing:</h6>
+                            <div class="bg-light p-3 rounded">
+                                <h4 class="text-primary fw-bold">₹9,999</h4>
+                                <p class="mb-2 text-muted small">or 3 monthly payments of ₹3,666</p>
+                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Office Modal -->
+    <div class="modal fade" id="officeModal" tabindex="-1" aria-labelledby="officeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="officeModalLabel">Microsoft Office Mastery</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        class="course-details-img" alt="Microsoft Office">
+                    <p>Become proficient in Microsoft Office applications including Word, Excel, PowerPoint, and Outlook
+                        for professional and personal productivity.</p>
+                    <h6 class="mt-4 mb-3">What You'll Learn:</h6>
+                    <ul class="course-features list-unstyled">
+                        <li><i class="fas fa-check-circle"></i> Advanced Word document formatting</li>
+                        <li><i class="fas fa-check-circle"></i> Excel formulas, functions, and data analysis</li>
+                        <li><i class="fas fa-check-circle"></i> Creating professional PowerPoint presentations</li>
+                        <li><i class="fas fa-check-circle"></i> Email management with Outlook</li>
+                        <li><i class="fas fa-check-circle"></i> Time-saving shortcuts and tips</li>
+                        <li><i class="fas fa-check-circle"></i> Collaboration features in Office 365</li>
+                        <li><i class="fas fa-check-circle"></i> Automating tasks with macros</li>
+                    </ul>
+                    <div class="row mt-4 gy-3">
+                        <div class="col-md-6">
+                            <h6>Course Details:</h6>
+                            <ul class="list-unstyled">
+                                <li><strong>Duration:</strong> 6 Weeks</li>
+                                <li><strong>Effort:</strong> 4-6 hours/week</li>
+                                <li><strong>Format:</strong> Online, Self-paced</li>
+                                <li><strong>Prerequisites:</strong> Basic computer skills</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Pricing:</h6>
+                            <div class="bg-light p-3 rounded">
+                                <h4 class="text-primary fw-bold">₹4,999</h4>
+                                <p class="mb-2 text-muted small">or 2 monthly payments of ₹2,750</p>
+                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AutoCAD Modal -->
+    <div class="modal fade" id="autocadModal" tabindex="-1" aria-labelledby="autocadModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="autocadModalLabel">AutoCAD for Beginners</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://imgs.search.brave.com/HrH5sGI5lKtSzxAeE4BLj629ILEd1sA5AElMQyV8Whs/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQx/OTY1OTM2Ni9waG90/by9tZWNoYW5pY2Fs/LXBpZWNlLWNhZC1k/ZXNpZ24uanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPUtZMzRQ/Zm9GVjExeFVRTnV3/NHc5bTdldHZOYllv/eUN1VjRNeHRMT210/Mkk9"
+                        class="course-details-img" alt="Microsoft Office">
+                    <p>Learn 2D and 3D drafting and modeling with AutoCAD, the industry-standard CAD software for
+                        engineers, architects, and designers.</p>
+                    <h6 class="mt-4 mb-3">What You'll Learn:</h6>
+                    <ul class="course-features list-unstyled">
+                        <li><i class="fas fa-check-circle"></i> AutoCAD interface and navigation</li>
+                        <li><i class="fas fa-check-circle"></i> Creating and editing 2D drawings</li>
+                        <li><i class="fas fa-check-circle"></i> Dimensioning and annotation</li>
+                        <li><i class="fas fa-check-circle"></i> Working with layers and blocks</li>
+                        <li><i class="fas fa-check-circle"></i> Introduction to 3D modeling</li>
+                        <li><i class="fas fa-check-circle"></i> Creating and editing 3D objects</li>
+                        <li><i class="fas fa-check-circle"></i> Preparing drawings for printing</li>
+                    </ul>
+                    <div class="row mt-4 gy-3">
+                        <div class="col-md-6">
+                            <h6>Course Details:</h6>
+                            <ul class="list-unstyled">
+                                <li><strong>Duration:</strong> 8 Weeks</li>
+                                <li><strong>Effort:</strong> 6-8 hours/week</li>
+                                <li><strong>Format:</strong> Online, Instructor-led</li>
+                                <li><strong>Prerequisites:</strong> Basic computer skills</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Pricing:</h6>
+                            <div class="bg-light p-3 rounded">
+                                <h4 class="text-primary fw-bold">₹7,999</h4>
+                                <p class="mb-2 text-muted small">or 2 monthly payments of ₹4,250</p>
+                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Premiere Pro Modal -->
+    <div class="modal fade" id="premiereModal" tabindex="-1" aria-labelledby="premiereModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="premiereModalLabel">Video Editing with Premiere Pro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
+                        class="course-details-img" alt="Premiere Pro">
+                    <p>Master professional video editing techniques using Adobe Premiere Pro. Learn to edit, color
+                        correct, and export high-quality videos for various platforms.</p>
+                    <h6 class="mt-4 mb-3">What You'll Learn:</h6>
+                    <ul class="course-features list-unstyled">
+                        <li><i class="fas fa-check-circle"></i> Premiere Pro interface and workflow</li>
+                        <li><i class="fas fa-check-circle"></i> Video editing techniques and transitions</li>
+                        <li><i class="fas fa-check-circle"></i> Audio editing and mixing</li>
+                        <li><i class="fas fa-check-circle"></i> Color correction and grading</li>
+                        <li><i class="fas fa-check-circle"></i> Working with effects and titles</li>
+                        <li><i class="fas fa-check-circle"></i> Multi-camera editing</li>
+                        <li><i class="fas fa-check-circle"></i> Exporting for different platforms</li>
+                    </ul>
+                    <div class="row mt-4 gy-3">
+                        <div class="col-md-6">
+                            <h6>Course Details:</h6>
+                            <ul class="list-unstyled">
+                                <li><strong>Duration:</strong> 8 Weeks</li>
+                                <li><strong>Effort:</strong> 6-8 hours/week</li>
+                                <li><strong>Format:</strong> Online, Instructor-led</li>
+                                <li><strong>Prerequisites:</strong> Basic computer skills</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Pricing:</h6>
+                            <div class="bg-light p-3 rounded">
+                                <h4 class="text-primary fw-bold">₹8,499</h4>
+                                <p class="mb-2 text-muted small">or 2 monthly payments of ₹4,500</p>
+                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Computer Basics Modal -->
+    <div class="modal fade" id="computerBasicsModal" tabindex="-1" aria-labelledby="computerBasicsModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="computerBasicsModalLabel">Computer Fundamentals</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+                        class="course-details-img" alt="Computer Basics">
+                    <p>Learn essential computer skills including hardware, software, operating systems, and basic
+                        troubleshooting for beginners.</p>
+                    <h6 class="mt-4 mb-3">What You'll Learn:</h6>
+                    <ul class="course-features list-unstyled">
+                        <li><i class="fas fa-check-circle"></i> Computer hardware components</li>
+                        <li><i class="fas fa-check-circle"></i> Operating system fundamentals</li>
+                        <li><i class="fas fa-check-circle"></i> File management and organization</li>
+                        <li><i class="fas fa-check-circle"></i> Basic software applications</li>
+                        <li><i class="fas fa-check-circle"></i> Computer security best practices</li>
+                        <li><i class="fas fa-check-circle"></i> Basic troubleshooting techniques</li>
+                        <li><i class="fas fa-check-circle"></i> Introduction to productivity software</li>
+                    </ul>
+                    <div class="row mt-4 gy-3">
+                        <div class="col-md-6">
+                            <h6>Course Details:</h6>
+                            <ul class="list-unstyled">
+                                <li><strong>Duration:</strong> 4 Weeks</li>
+                                <li><strong>Effort:</strong> 3-5 hours/week</li>
+                                <li><strong>Format:</strong> Online, Self-paced</li>
+                                <li><strong>Prerequisites:</strong> None</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Pricing:</h6>
+                            <div class="bg-light p-3 rounded">
+                                <h4 class="text-primary fw-bold">₹3,999</h4>
+                                <p class="mb-2 text-muted small">or 2 monthly payments of ₹2,250</p>
+                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Internet Basics Modal -->
+    <div class="modal fade" id="internetBasicsModal" tabindex="-1" aria-labelledby="internetBasicsModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="internetBasicsModalLabel">Internet & Email Essentials</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+                        class="course-details-img" alt="Internet Basics">
+                    <p>Master web browsing, online safety, email communication, and cloud services for personal and
+                        professional use.</p>
+                    <h6 class="mt-4 mb-3">What You'll Learn:</h6>
+                    <ul class="course-features list-unstyled">
+                        <li><i class="fas fa-check-circle"></i> Web browsing and search techniques</li>
+                        <li><i class="fas fa-check-circle"></i> Online safety and security</li>
+                        <li><i class="fas fa-check-circle"></i> Email setup and management</li>
+                        <li><i class="fas fa-check-circle"></i> Cloud storage and file sharing</li>
+                        <li><i class="fas fa-check-circle"></i> Social media basics</li>
+                        <li><i class="fas fa-check-circle"></i> Online communication tools</li>
+                        <li><i class="fas fa-check-circle"></i> Digital privacy and security</li>
+                    </ul>
+                    <div class="row mt-4 gy-3">
+                        <div class="col-md-6">
+                            <h6>Course Details:</h6>
+                            <ul class="list-unstyled">
+                                <li><strong>Duration:</strong> 4 Weeks</li>
+                                <li><strong>Effort:</strong> 3-5 hours/week</li>
+                                <li><strong>Format:</strong> Online, Self-paced</li>
+                                <li><strong>Prerequisites:</strong> Basic computer skills</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Pricing:</h6>
+                            <div class="bg-light p-3 rounded">
+                                <h4 class="text-primary fw-bold">₹3,499</h4>
+                                <p class="mb-2 text-muted small">or 2 monthly payments of ₹1,999</p>
+                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Typing Modal -->
+    <div class="modal fade" id="typingModal" tabindex="-1" aria-labelledby="typingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="typingModalLabel">Touch Typing Mastery</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+                        class="course-details-img" alt="Typing Course">
+                    <p>Improve your typing speed and accuracy with proper techniques and practice. This course will help
+                        you type faster and more efficiently.</p>
+                    <h6 class="mt-4 mb-3">What You'll Learn:</h6>
+                    <ul class="course-features list-unstyled">
+                        <li><i class="fas fa-check-circle"></i> Proper finger placement and posture</li>
+                        <li><i class="fas fa-check-circle"></i> Touch typing techniques</li>
+                        <li><i class="fas fa-check-circle"></i> Speed building exercises</li>
+                        <li><i class="fas fa-check-circle"></i> Accuracy improvement methods</li>
+                        <li><i class="fas fa-check-circle"></i> Special characters and numbers</li>
+                        <li><i class="fas fa-check-circle"></i> Typing for different purposes</li>
+                        <li><i class="fas fa-check-circle"></i> Maintaining typing skills</li>
+                    </ul>
+                    <div class="row mt-4 gy-3">
+                        <div class="col-md-6">
+                            <h6>Course Details:</h6>
+                            <ul class="list-unstyled">
+                                <li><strong>Duration:</strong> 4 Weeks</li>
+                                <li><strong>Effort:</strong> 3-5 hours/week</li>
+                                <li><strong>Format:</strong> Online, Self-paced</li>
+                                <li><strong>Prerequisites:</strong> Basic computer skills</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Pricing:</h6>
+                            <div class="bg-light p-3 rounded">
+                                <h4 class="text-primary fw-bold">₹2,999</h4>
+                                <p class="mb-2 text-muted small">or 2 monthly payments of ₹1,666</p>
+                                <button class="btn btn-primary w-100 mt-2">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    // Smooth scrolling for anchor links (optional, Bootstrap handles modals)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            // Prevent default if it's not a modal trigger
+            if (!this.hasAttribute('data-bs-toggle')) {
+                e.preventDefault();
+                const targetElement = document.querySelector(this.getAttribute('href'));
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+
+    // Change navbar style on scroll
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled'); // Use the new class name
+        } else {
+            navbar.classList.remove('scrolled'); // Use the new class name
+        }
+    });
+
+    // Set current year in footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
