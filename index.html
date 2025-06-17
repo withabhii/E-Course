@@ -63,12 +63,25 @@
             /* red-500 */
         }
 
+        /* Fix horizontal scrolling and overflow issues */
+        html,
+        body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
 
         body {
             font-family: 'Poppins', sans-serif;
             color: #334155;
-            overflow-x: hidden;
             background-color: var(--off-white);
+        }
+
+        /* Ensure containers don't cause overflow */
+        .container,
+        .container-fluid {
+            padding-left: 15px;
+            padding-right: 15px;
         }
 
         /* Navigation */
@@ -690,7 +703,6 @@
 
         .footer::before {
             content: '';
-            /* position: absolute; */
             top: 0;
             left: 0;
             width: 100%;
@@ -906,6 +918,7 @@
 
             .hero-section p {
                 font-size: 1.1rem;
+                padding: 0 15px;
             }
 
             .section-title h2 {
@@ -922,6 +935,7 @@
 
             .cta-section p {
                 font-size: 1rem;
+                padding: 0 15px;
             }
 
             .cta-buttons .btn {
@@ -936,11 +950,28 @@
             .footer {
                 padding: 80px 0 30px;
             }
+
+            /* Prevent content from overflowing on mobile */
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .row {
+                margin-left: -15px;
+                margin-right: -15px;
+            }
+
+            [class*="col-"] {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
         }
 
         @media (max-width: 575px) {
             .hero-section h1 {
                 font-size: 2rem;
+                padding: 0 15px;
             }
 
             .hero-btn {
@@ -949,6 +980,11 @@
 
             .section-title h2 {
                 font-size: 1.6rem;
+                padding: 0 15px;
+            }
+
+            .section-title p {
+                padding: 0 15px;
             }
 
             .stat-number {
@@ -963,6 +999,17 @@
             .navbar-brand img.logo-text {
                 height: 22px;
             }
+
+            /* Ensure no horizontal scroll on very small devices */
+            body {
+                min-width: 320px;
+            }
+        }
+
+        /* Fix for floating elements causing overflow */
+        section {
+            position: relative;
+            overflow: hidden;
         }
     </style>
 </head>
@@ -992,9 +1039,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="login.php">Login</a>
-                    </li> -->
                 </ul>
             </div>
         </div>
@@ -1216,7 +1260,6 @@
                             positions, and within 3 months of completing the course, I landed a job at a tech startup
                             with a 40% salary increase.</p>
                         <div class="testimonial-author">
-                            <!-- <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Priya Sharma"> -->
                             <div class="author-info">
                                 <h5>Priya Sharma</h5>
                                 <p>Full Stack Developer</p>
@@ -1239,7 +1282,6 @@
                             incredibly supportive, and the career services helped me prepare for interviews. I'm now
                             working as a junior data scientist at a Fortune 500 company.</p>
                         <div class="testimonial-author">
-                            <!-- <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Rahul Patel"> -->
                             <div class="author-info">
                                 <h5>Rahul Patel</h5>
                                 <p>Data Scientist</p>
@@ -1262,7 +1304,6 @@
                             concepts. The hands-on labs were invaluable, and I was able to pass my AWS certification
                             exam on the first try thanks to this course.</p>
                         <div class="testimonial-author">
-                            <!-- <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ananya Gupta"> -->
                             <div class="author-info">
                                 <h5>Ananya Gupta</h5>
                                 <p>Cloud Engineer</p>
@@ -1309,12 +1350,10 @@
                         <div class="social-icons">
                             <a href="https://www.facebook.com/logicmindsbyparii" target="_blank"><i
                                     class="fab fa-facebook-f"></i></a>
-                            <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
                             <a href="https://www.instagram.com/logic_minds_by_parii/" target="_blank"><i
                                     class="fab fa-instagram"></i></a>
                             <a href="https://www.linkedin.com/in/logicmindsbyparii/" target="_blank"><i
                                     class="fab fa-linkedin-in"></i></a>
-                            <!-- <a href="#"><i class="fab fa-youtube"></i></a> -->
                         </div>
                     </div>
                 </div>
@@ -1326,7 +1365,6 @@
                             <li><a href="course.html"><i class="fas fa-chevron-right"></i> Courses</a></li>
                             <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
                             <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                            <!-- <li><a href="login.php"><i class="fas fa-chevron-right"></i> Login</a></li> -->
                         </ul>
                     </div>
                 </div>
